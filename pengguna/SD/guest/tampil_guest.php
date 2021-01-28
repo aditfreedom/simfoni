@@ -18,7 +18,7 @@
 // $semua_jenjang = $jenjang->tampil_jenjang();
 
 
-$semua_guest = $guest->tampil_guest();
+$semua_guest = $guest->tampil_guest_only();
 $semua_mapel1 = $mapel1->tampil_mapel1();
 $semua_kelas = $kelas->tampil_kelas();
 $semua_kelas2 = $kelas2->tampil_kelas2();

@@ -34,7 +34,6 @@ $semua_project = $project->tampil_class_project_periode_sd($id_semester);
 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
 </head>
 <body>
-	hr
 <!-- <form action="upload_laporan_project.php" method="POST" enctype="multipart/form-data">	 -->
 
 <div class="row">

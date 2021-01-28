@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Nov 2020 pada 03.36
+-- Waktu pembuatan: 28 Jan 2021 pada 09.49
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.2.34
 
@@ -76,6 +76,30 @@ INSERT INTO `datapustaka` (`id_datapustaka`, `id_semester`, `id_jenjang`, `kegia
 (8, '3', '1', 'LIterasi Merdeka SD', '2019-08-16', '2019-08-16', 'Meningkatkan daya kreativitas siswa/i dalam berkarya dan menulis', 'Siswa dan Guru SD ', '1.640.000', ' '),
 (9, '3', '2', 'LIterasi Merdeka SMP', '2019-08-16', '2019-08-16', 'Meningkatkan daya kreativitas siswa/i dalam berkarya dan menulis', 'Siswa dan Guru SMP', '715.000', ' '),
 (10, '3', '3', 'LIterasi Merdeka SMA', '2019-08-16', '2019-08-16', 'Meningkatkan daya kreativitas siswa/i dalam berkarya dan menulis', 'Siswa dan Guru SMA', '780.000', ' ');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `event`
+--
+
+CREATE TABLE `event` (
+  `id_event` int(11) NOT NULL,
+  `tahun` varchar(30) NOT NULL,
+  `nama_event` varchar(255) NOT NULL,
+  `keterangan` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `event`
+--
+
+INSERT INTO `event` (`id_event`, `tahun`, `nama_event`, `keterangan`) VALUES
+(1, '2006', 'Peresmian Sekolah Sukma Bangsa Bireuen', 'Kegiatan tersebut diresmikan oleh bapak presiden RI Susilo Bambang Yudhoyono, Pembina Yayasan Sukma Bapak Surya Paloh, seluruh pengurus Yayasan Sukma dan dinas pendidikan Kabupaten Bireuen beserta jajarannya'),
+(2, '2009 - 2012', 'Perubahan Status Sekolah menjadi Rintisan Sekolah Bertaraf Internasional (RSBI)', 'Dalam kegiatan tersebut dihadiri oleh Bapak Bupati Bireuen Serta pengurus yayasan Sukma'),
+(5, '2009', 'Kick Andy', 'Kegiatan tersebut dilaksanakan di Sekolah Sukma Bangsa Bireuen yang dihadiri pengurus Yayasan Sukma dan Dinas Pendidikan Bireuen'),
+(6, '2016', 'Dzikir Akbar', 'Kegiatan dzikir akbar yang diadakan oleh Media Group di Sekolah Sukma Bangsa Bireuen. Dalam kegiatan tersebut juga dilakukan pembagian paket sembako untuk warga Bireuen di sekitar Sekolah Sukma Bangsa Bireuen, adapun acara tersebut dihadiri oleh pengurus '),
+(7, '2020', 'Kenduri Kebangsaan', 'Kegiatan Kenduri Kebangsaan diadakan oleh Media Group dan Yayasan Sukma di Sekolah Sukma Bangsa Bireuen yang dihadiri oleh Presiden RI, Ir. H. Joko Widodo, Menteri KLHK, Menteri Kominfo dan Menteri Pertanian serta Pembina Yayasan Sukma Bapak Surya Paloh dan seluruh pengurus Yayasan Sukma dan Aparatur Pemerintahan Aceh beserta jajarannya');
 
 -- --------------------------------------------------------
 
@@ -347,7 +371,7 @@ INSERT INTO `guru` (`id_guru`, `id_jenjang`, `nama_guru`, `nip_guru`, `status_gu
 (76, '2', 'Rahmi', '10181017@', 'SDK'),
 (77, '3', 'Vera Wahyuni', '11161003', 'OJT'),
 (78, '3', 'Agus Suarni', '10101066@', 'TIDAK AKTIF'),
-(79, '2', 'Herlina Sari', '10081089@', 'SDK'),
+(79, '2', 'Herlina Sari, S.Si', '10081089#', 'SDK'),
 (80, '3', 'Nurdiana', '10156017@', 'OJT'),
 (81, '1', 'Amrul Hakim', '10156009', 'SDK'),
 (82, '1', 'Nining Hasdiana', '10196024@', 'TIDAK AKTIF'),
@@ -406,7 +430,9 @@ INSERT INTO `guru` (`id_guru`, `id_jenjang`, `nama_guru`, `nip_guru`, `status_gu
 (139, '2', 'Sri Mulyati, S.S.', '10206054', 'SDK HONORER'),
 (140, '3', 'Sabri', '10206041', 'SDK HONORER'),
 (141, '1', 'Idawati, S. Pd.I.', '10196031', 'SDK HONORER'),
-(142, '1', 'Dewi Rahmayanti, S.Pd.I', '10206056', 'SDK HONORER');
+(142, '1', 'Dewi Rahmayanti, S.Pd.I', '10206056', 'SDK HONORER'),
+(164, '2', 'Yunda Nafsiah, S.Pd', '10181020', 'OJT'),
+(165, '2', 'Firdaus Adiannur, S.Pd', '10206048', 'SDK HONORER');
 
 -- --------------------------------------------------------
 
@@ -466,7 +492,16 @@ INSERT INTO `jadwal` (`id_jadwal`, `id_jenjang`, `id_hari`, `id_jam`, `id_ruang`
 (41, '2', '6', '07.30 - 10.30 WIB ', '6', 'VIII Al-Ghafiqi'),
 (42, '2', '6', '10.30 - 12.30 WIB', '6', 'VIII Abraham Maslow'),
 (43, '2', '6', '08.00 - 10.00 WIB', '7', 'Class Project IX (Project A)'),
-(44, '2', '6', '10.30 - 12.30 WIB', '7', 'Class Project VIII (Project C)');
+(44, '2', '6', '10.30 - 12.30 WIB', '7', 'Class Project VIII (Project C)'),
+(47, '3', '1', '13.30-15.30', '1', 'Teacher Class'),
+(48, '3', '1', '15.45-17.45', '1', 'Kelas Pak Nizar '),
+(49, '3', '2', '13.30-15.30', '1', 'Alacrity (kelas Pak Nizar) '),
+(50, '3', '2', '15.45-17.45', '1', 'TOEFL X & XI (Kelas Pak Nizar)'),
+(51, '3', '4', '13.30-15.30', '1', 'TOEFL XII (Kelas Pak Nizar)'),
+(52, '3', '4', '15.45-17.45', '1', 'TOEFL XII (Kelas Pak Nizar)'),
+(53, '3', '4', '15.45-17.45', '1', 'TOEFL XII (Kelas Pak Nizar)'),
+(54, '3', '5', '14.00-16.00', '1', 'Kelas Pak Nizar '),
+(55, '3', '5', '16.00-18.00', '1', 'Alacrity (kelas Pak Nizar) ');
 
 -- --------------------------------------------------------
 
@@ -486,7 +521,8 @@ CREATE TABLE `jenjang` (
 INSERT INTO `jenjang` (`id_jenjang`, `nama_jenjang`) VALUES
 (1, 'SD'),
 (2, 'SMP'),
-(3, 'SMA');
+(3, 'SMA'),
+(4, 'ALL LEVEL');
 
 -- --------------------------------------------------------
 
@@ -928,6 +964,29 @@ INSERT INTO `kelas4` (`id_kelas4`, `nama_kelas4`, `id_jenjang`, `status`) VALUES
 (78, 'XI IPS', '3', 'Aktif'),
 (79, 'XII IPA', '3', 'Aktif'),
 (80, 'XII IPS', '3', 'Aktif');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `kepegawaian`
+--
+
+CREATE TABLE `kepegawaian` (
+  `id` int(11) NOT NULL,
+  `nama_pegawai` varchar(255) NOT NULL,
+  `jk` varchar(25) NOT NULL,
+  `nip` varchar(12) NOT NULL,
+  `pendidikan` varchar(300) NOT NULL,
+  `lulus` varchar(6) NOT NULL,
+  `status` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `kepegawaian`
+--
+
+INSERT INTO `kepegawaian` (`id`, `nama_pegawai`, `jk`, `nip`, `pendidikan`, `lulus`, `status`) VALUES
+(1, 'Aditya Aziz Fikhri, S.Tr.Kom', 'Laki-Laki', '10186018', 'D-IV Teknik Informatika Politeknik Negeri Lhokseumawe', '2018', 'SDK HONORER');
 
 -- --------------------------------------------------------
 
@@ -1704,7 +1763,9 @@ INSERT INTO `mapel` (`id_mapel`, `id_jenjang`, `nama_mapel`) VALUES
 (41, '1', 'PPKN'),
 (42, '1', 'SBK'),
 (43, '2', 'Bimbingan & Konseling'),
-(44, '3', 'Bimbingan & Konseling');
+(44, '3', 'Bimbingan & Konseling'),
+(45, '2', 'IPA TERPADU FISIKA'),
+(46, '2', 'IPA TERPADU BIOLOGI');
 
 -- --------------------------------------------------------
 
@@ -1997,7 +2058,8 @@ INSERT INTO `mitra` (`id_mitra`, `id_jenjang`, `bidang`, `nama_mitra`, `bentuk`,
 (9, '3', 'Pendidikan', 'Universitas Prasetiya Mulya Jakarta', 'Sosialisasi Beasiswa dan Promosi Kampus Universitas Prasetiya Mulya', '2019-08-06', '2019-08-06', 'SMA_Univ Prasetiya Mulya.docx'),
 (10, '1', 'Kesehatan ', 'UPTD Puskesmas Jeumpa, Kabupaten Bireuen', 'Tampilan Senam Kesehatan pada hari Akreditasi UPTD Puskesmas Jeumpa', '2019-10-18', '2019-10-18', 'SD_Tampilan Senam Kesehatan di Akreditasi Puskesmas Jeumpa.docx'),
 (11, '2', 'Pendidikan', 'Lembaga Ruang Guru ', 'Sosialisasi Ruang Guru bagi siswa dan guru SMP', '2019-10-23', '2019-10-23', 'SMP_Sosialisasi Ruang Guru.docx'),
-(12, '3', 'Pendidikan', 'National Chi Nan University, Taiwan', 'Pertukaran Budaya dan Pengajaran Bahasa Mandarin oleh Mahasiswa dan Dosen NCNU', '2019-07-15', '2019-08-15', '');
+(12, '3', 'Pendidikan', 'National Chi Nan University, Taiwan', 'Pertukaran Budaya dan Pengajaran Bahasa Mandarin oleh Mahasiswa dan Dosen NCNU', '2019-07-15', '2019-08-15', ''),
+(14, '4', 'Pendidikan', 'Finland University', 'Scholarship from Yayasan Sukma Kepada Teacher Education 3 SSB Aceh', '2016-01-01', '2017-12-25', '');
 
 -- --------------------------------------------------------
 
@@ -2298,8 +2360,7 @@ INSERT INTO `pengguna` (`id_pengguna`, `id_jenjang`, `id_guru`, `username_penggu
 (76, '2', '75', '10176010', 'c2e12d9ffea832edd7d5867e6ddb6293'),
 (77, '3', '55', '10181017@', 'bde64ce866da91cc9c6274db983b366c'),
 (78, '3', '77', '11161003', '55a61dec5a3418c9268f5f0e96db1aae'),
-(79, '3', '3', '10101066@', '4fd242bbc6147be90726f875c7a9fdc4'),
-(80, '2', '26', '10081089@', 'cef6087c36791b84670459b57cdcf51b'),
+(79, '3', '3', '10101066@', 'c541d7d7b9b86e7178e7afb148847457'),
 (81, '2', '83', '10166003@', '62b6bba5f9984cd924fddbc45115e623'),
 (82, '3', '48', '10156017@', '202cb962ac59075b964b07152d234b70'),
 (83, '1', '81', '10156009', '09641a25c5515362c44634a43fb6e8bb'),
@@ -2312,12 +2373,13 @@ INSERT INTO `pengguna` (`id_pengguna`, `id_jenjang`, `id_guru`, `username_penggu
 (92, '2', '88', '10196030', 'f1ebacfb66bf715a85e1a4c43654e3e0'),
 (93, '2', '9', '10081051', '6d95f93c1c5a40f66ca23e111b4c0575'),
 (95, '1', '91', '10186011', '2d944b73cf86f7277b684d3f86bf4fa6'),
-(99, '3', '93', '10101066@@', '4fd242bbc6147be90726f875c7a9fdc4'),
-(100, '2', '26', '10081089@@', 'f410e9571ab6d474573a18f0bf126449'),
 (101, '3', '94', 'maina', '29422fcab11ad5872e41f0e110d10f41'),
 (102, '3', '95', '10196035', '827ccb0eea8a706c4c34a16891f84e7b'),
 (103, '3', '96', '10206039', 'e281f86525e0451551ae4f34282ea8d1'),
-(104, '3', '98', '10186017', '3f68f19ef716856d494dbc5c371fd4bd');
+(104, '3', '98', '10186017', '3f68f19ef716856d494dbc5c371fd4bd'),
+(105, '2', '164', '#10181020', 'cfc449e1016e797ba485b925e1c6b391'),
+(106, '2', '165', '10206048', 'edfb24c0d903ce36acced5e7891193db'),
+(107, '2', '79', '10081089#', '38c0933c6fd52fd214e7161f93e95f9f');
 
 -- --------------------------------------------------------
 
@@ -2492,7 +2554,13 @@ INSERT INTO `project` (`id_project`, `id_jenjang`, `id_semester`, `id_kelas`, `i
 (130, '2', '4', '43', '44', '', '', '88', 'membuat laporan observasi tentang pertandingan bola persahabatan antara SMP Sukma Bangsa Bireuen vs SMP-IT Azkiya', '2020-01-29', '2020-01-29', '7', '', '', '', 'laporan', '300.000', '', ''),
 (131, '3', '4', '4', '3', '', '', '25', 'Drama dalam bahasa Arab', '2020-04-13', '2020-04-14', '12', '13', '', '', 'Siswa menampilkan drama berbahasa Arab', '0', '', ''),
 (132, '3', '4', '3', '', '', '', '65', 'Pengolahan potensi (hasil) pertanian dan perkebunan untuk ketahanan pangan nasional', '2020-01-31', '2020-01-31', '29', '', '', '', 'Produk olahan makanan hasil perkebunan', '92.000', 'LAPORAN PROJECT PENGOLAHAN HASIL PERKEBUNAN.docx', ''),
-(133, '3', '4', '4', '', '', '', '32', 'Cause and Effect', '2020-03-11', '2020-03-12', '22', '', '', '', ' Cause and Effect Drawing  & Video Explaining the cause and effect ', '100.000', '', '');
+(133, '3', '4', '4', '', '', '', '32', 'Cause and Effect', '2020-03-11', '2020-03-12', '22', '', '', '', ' Cause and Effect Drawing  & Video Explaining the cause and effect ', '100.000', '', ''),
+(136, '2', '5', '69', '70', '', '', '164', 'Membuat Karya Kaligrafi Asmaul Husna dengan Corak Etnik Daerah Setempat.', '2020-08-14', '2020-09-11', '1', '5', '9', '', 'Produk dan karya siswa', '0', 'final project report kelas vii project b.docx', ''),
+(137, '2', '5', '71', '72', '', '', '69', 'Membuat Greeting Card dengan menggunakan desain ragam hias nusantara', '2020-07-17', '2020-08-30', '3', '10', '', '', 'Greeting card dengan desain ragam hias nusantara', '570.000', 'FINAL PROJECT REPORT greeting card kelas 8.docx', ''),
+(138, '2', '5', '69', '70', '', '', '69', 'Mendeskripsikan objek berupa alat ukur dari besaran pokok', '2020-07-16', '2020-08-29', '3', '4', '6', '11', 'Descriptive text', '0', 'Final Project Report FIS, MAT, ENG, TIK KELAS VII update 28.9.2020.docx', ''),
+(139, '2', '5', '73', '74', '', '', '38', 'Laporan permainan bola besar (sepak bola dan voli)', '2020-07-30', '2020-08-31', '6', '7', '10', '', 'laporan', '0', 'FINAL KELAS 9 MATH.docx', ''),
+(140, '2', '5', '71', '72', '', '', '16', 'Membuat video membaca berita tentang status gizi dan hubungannya dengan gizi seimbang', '2020-10-20', '2020-11-30', '11', '6', '2', '4', 'Video', '0', 'PROJECT A_KELAS VIII_FINAL PROJECT REPORT_BAHASA, BIO, MTK, TIK.docx', ''),
+(141, '2', '5', '71', '72', '', '', '165', 'Membaca Berita dari Grafik Tentang Makanan dan Minuman Halal yang Bergizi', '2020-09-10', '2020-10-08', '1', '2', '11', '5', 'Laporan ', '0', 'FINAL PROJECT REPORT KLS VIII (PROJECT A).docx', '');
 
 -- --------------------------------------------------------
 
@@ -2554,10 +2622,10 @@ CREATE TABLE `semester` (
 --
 
 INSERT INTO `semester` (`id_semester`, `nama_semester`, `status`) VALUES
-(1, 'Ganjil 2018/2019', 'Tidak Aktif'),
-(2, 'Genap 2018/2019', 'Tidak Aktif'),
-(3, 'Ganjil 2019/2020', 'Tidak Aktif'),
-(4, 'Genap 2019/2020', 'Tidak Aktif'),
+(1, 'Ganjil 2018/2019', 'Aktif'),
+(2, 'Genap 2018/2019', 'Aktif'),
+(3, 'Ganjil 2019/2020', 'Aktif'),
+(4, 'Genap 2019/2020', 'Aktif'),
 (5, 'Ganjil 2020/2021', 'Aktif'),
 (6, 'Genap 2020/2021', 'Tidak Aktif');
 
@@ -2586,8 +2654,8 @@ CREATE TABLE `siswa` (
 --
 
 INSERT INTO `siswa` (`id_siswa`, `id_jenjang`, `id_kelas`, `nis_siswa`, `nama_siswa`, `jk_siswa`, `alamat_siswa`, `ayah_siswa`, `ibu_siswa`, `hp_siswa`, `kerja_siswa`) VALUES
-(1, '3', '54', '10165001', 'Alifa Azeda', 'Perempuan', 'Komplek PU Desa Geulumpang Payong, Kec. Jeumpa, Kab. Bireuen, Aceh', 'Azhar Daud', 'Eni Yulita', '81360259576', 'Wiraswasta & PNS'),
-(2, '3', '54', '10165002', 'Amira Addina Zahra', 'Perempuan', 'Mns. Tgk. Digadong, Kec. Jeumpa, Kab. Bireuen, Aceh', 'Armiya', 'Nurul Fajri, SH', '85206227700', 'PNS'),
+(1, '3', '54', '10165001', 'Alifa Azeda', 'Perempuan', 'Komplek PU Desa Geulumpang Payong, Kec. Jeumpa, Kab. Bireuen, Aceh', 'Azhar Daud', 'Eni Yulita', '081360259576', 'Wiraswasta & PNS'),
+(2, '3', '54', '10165002', 'Amira Addina Zahra', 'Perempuan', 'Mns. Tgk. Digadong, Kec. Jeumpa, Kab. Bireuen, Aceh', 'Armiya', 'Nurul Fajri, SH', '085206227700', 'PNS'),
 (3, '3', '54', '10165003', 'Arief Johansyah', 'Laki-Laki', 'Dsn Kruetmameh, Desa Geudong Alue, Kec. Kota Juang, Kab. Bireuen, Aceh', 'Faisal, SE.Ak', 'Eliza Zuhra, S.Pd', '85261872179', 'Karyawan Bank & Guru'),
 (4, '3', '54', '10165005', 'Cut Putroe Sausan', 'Perempuan', 'Desa Glg. Baroe, Kec. Kota Juang, Kab. Bireuen, Aceh', 'T. Juwirman Syah, SE', 'Yulia Fitri, S.Ag', '81360472424', 'PNS'),
 (5, '3', '54', '10165007', 'Dinda Fairus Naila', 'Perempuan', 'Desa Glumpang Payong, Kec. Jeumpa, Kab. Bireuen, Aceh', 'Taufik', 'Farrah Dina', '85275333164', 'PNS & IRT'),
@@ -3881,6 +3949,12 @@ ALTER TABLE `datapustaka`
   ADD PRIMARY KEY (`id_datapustaka`);
 
 --
+-- Indeks untuk tabel `event`
+--
+ALTER TABLE `event`
+  ADD PRIMARY KEY (`id_event`);
+
+--
 -- Indeks untuk tabel `guest`
 --
 ALTER TABLE `guest`
@@ -3951,6 +4025,12 @@ ALTER TABLE `kelas3`
 --
 ALTER TABLE `kelas4`
   ADD PRIMARY KEY (`id_kelas4`);
+
+--
+-- Indeks untuk tabel `kepegawaian`
+--
+ALTER TABLE `kepegawaian`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `konselor`
@@ -4143,6 +4223,12 @@ ALTER TABLE `datapustaka`
   MODIFY `id_datapustaka` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT untuk tabel `event`
+--
+ALTER TABLE `event`
+  MODIFY `id_event` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT untuk tabel `guest`
 --
 ALTER TABLE `guest`
@@ -4152,7 +4238,7 @@ ALTER TABLE `guest`
 -- AUTO_INCREMENT untuk tabel `guru`
 --
 ALTER TABLE `guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=166;
 
 --
 -- AUTO_INCREMENT untuk tabel `hari`
@@ -4164,13 +4250,13 @@ ALTER TABLE `hari`
 -- AUTO_INCREMENT untuk tabel `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT untuk tabel `jenjang`
 --
 ALTER TABLE `jenjang`
-  MODIFY `id_jenjang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_jenjang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `jk`
@@ -4215,6 +4301,12 @@ ALTER TABLE `kelas4`
   MODIFY `id_kelas4` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
+-- AUTO_INCREMENT untuk tabel `kepegawaian`
+--
+ALTER TABLE `kepegawaian`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT untuk tabel `konselor`
 --
 ALTER TABLE `konselor`
@@ -4248,7 +4340,7 @@ ALTER TABLE `manajemen`
 -- AUTO_INCREMENT untuk tabel `mapel`
 --
 ALTER TABLE `mapel`
-  MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT untuk tabel `mapel1`
@@ -4284,7 +4376,7 @@ ALTER TABLE `minggu`
 -- AUTO_INCREMENT untuk tabel `mitra`
 --
 ALTER TABLE `mitra`
-  MODIFY `id_mitra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_mitra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `peminjaman`
@@ -4296,7 +4388,7 @@ ALTER TABLE `peminjaman`
 -- AUTO_INCREMENT untuk tabel `pengguna`
 --
 ALTER TABLE `pengguna`
-  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 
 --
 -- AUTO_INCREMENT untuk tabel `pjruangan`
@@ -4308,7 +4400,7 @@ ALTER TABLE `pjruangan`
 -- AUTO_INCREMENT untuk tabel `project`
 --
 ALTER TABLE `project`
-  MODIFY `id_project` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
+  MODIFY `id_project` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
 
 --
 -- AUTO_INCREMENT untuk tabel `pustaka`
@@ -4356,7 +4448,7 @@ ALTER TABLE `status_final`
 -- AUTO_INCREMENT untuk tabel `supervisi`
 --
 ALTER TABLE `supervisi`
-  MODIFY `id_supervisi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_supervisi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `tp`

@@ -18,7 +18,7 @@
 // $semua_jenjang = $jenjang->tampil_jenjang();
 
 
-$semua_project = $project->tampil_project();
+$semua_project = $project->tampil_project_only();
 $semua_mapel = $mapel->tampil_mapel();
 $semua_kelas = $kelas->tampil_kelas();
 $semua_kelas2 = $kelas2->tampil_kelas2();

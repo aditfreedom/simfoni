@@ -548,6 +548,32 @@ class project
 		return $semua_data;
 	}	
 
+	function tampil_project_only()
+	{
+		$semua_data = array();
+		$id_jenjang = $_SESSION['pengguna']['id_guru'];
+		
+		 $ambil = $this->koneksi->query("SELECT * FROM project
+		 	LEFT JOIN mapel1 ON project.id_mapel1 = mapel1.id_mapel1
+		 	LEFT JOIN mapel2 ON project.id_mapel2 = mapel2.id_mapel2
+		 	LEFT JOIN mapel3 ON project.id_mapel3 = mapel3.id_mapel3
+		 	LEFT JOIN mapel4 ON project.id_mapel4 = mapel4.id_mapel4
+		 	LEFT JOIN kelas ON project.id_kelas = kelas.id_kelas
+		 	LEFT JOIN kelas2 ON project.id_kelas2 = kelas2.id_kelas2
+		 	LEFT JOIN kelas3 ON project.id_kelas3 = kelas3.id_kelas3
+		 	LEFT JOIN kelas4 ON project.id_kelas4 = kelas4.id_kelas4
+		 	LEFT JOIN jenjang ON project.id_jenjang = jenjang.id_jenjang
+		 	LEFT JOIN guru ON project.id_guru = guru.id_guru
+		 	LEFT JOIN semester ON project.id_semester = semester.id_semester
+		 	
+		 	WHERE project.id_guru = $id_jenjang ORDER BY project.id_semester, project.waktu_1 ");
+		while ($data_array = $ambil->fetch_assoc()) 
+		{
+			$semua_data[] = $data_array;
+		}
+		return $semua_data;
+	}	
+
 
 	function tampil_project_admin()
 	{
@@ -1023,6 +1049,26 @@ class guest
 		return $semua_data;
 	}	
 
+	function tampil_guest_only()
+	{
+		$semua_data = array();
+		$id_jenjang = $_SESSION['pengguna']['id_guru'];
+		 $ambil = $this->koneksi->query("SELECT * FROM guest
+		 	LEFT JOIN mapel1 ON guest.id_mapel1 = mapel1.id_mapel1		 	
+		 	LEFT JOIN kelas ON guest.id_kelas = kelas.id_kelas
+		 	LEFT JOIN kelas2 ON guest.id_kelas2 = kelas2.id_kelas2
+		 	LEFT JOIN kelas3 ON guest.id_kelas3 = kelas3.id_kelas3
+		 	LEFT JOIN kelas4 ON guest.id_kelas4 = kelas4.id_kelas4
+		 	LEFT JOIN jenjang ON guest.id_jenjang = jenjang.id_jenjang
+		 	LEFT JOIN guru ON guest.id_guru = guru.id_guru
+		 	LEFT JOIN semester on guest.id_semester = semester.id_semester
+		 	WHERE guest.id_guru = $id_jenjang ORDER BY guest.id_semester, guest.waktu_1");
+		while ($data_array = $ambil->fetch_assoc()) 
+		{
+			$semua_data[] = $data_array;
+		}
+		return $semua_data;
+	}	
 
 	function tampil_guest_admin()
 	{
@@ -1367,6 +1413,32 @@ class guest
 		}
 		return $semua_data;
 	}	
+
+	function tampil_visit_only()
+	{
+		$semua_data = array();
+		$id_jenjang = $_SESSION['pengguna']['id_guru'];
+		 $ambil = $this->koneksi->query("SELECT * FROM visit
+		 	LEFT JOIN mapel1 ON visit.id_mapel1 = mapel1.id_mapel1		 	
+		 	LEFT JOIN mapel2 ON visit.id_mapel2 = mapel2.id_mapel2	 	
+		 	LEFT JOIN mapel3 ON visit.id_mapel3 = mapel3.id_mapel3		 	
+		 	LEFT JOIN mapel4 ON visit.id_mapel4 = mapel4.id_mapel4		 	
+		 	LEFT JOIN kelas ON visit.id_kelas = kelas.id_kelas
+		 	LEFT JOIN kelas2 ON visit.id_kelas2 = kelas2.id_kelas2
+		 	LEFT JOIN kelas3 ON visit.id_kelas3 = kelas3.id_kelas3
+		 	LEFT JOIN kelas4 ON visit.id_kelas4 = kelas4.id_kelas4
+		 	LEFT JOIN jenjang ON visit.id_jenjang = jenjang.id_jenjang
+		 	LEFT JOIN guru ON visit.id_guru = guru.id_guru	 
+		 	LEFT JOIN semester ON visit.id_semester = semester.id_semester	 
+		 	WHERE visit.id_guru = $id_jenjang ORDER BY visit.id_semester, visit.waktu_1
+		 	");
+		while ($data_array = $ambil->fetch_assoc()) 
+		{
+			$semua_data[] = $data_array;
+		}
+		return $semua_data;
+	}	
+
 
 	function tampil_visit_admin()
 	{
@@ -2261,6 +2333,30 @@ class guru
 		return $semua_data;	
 	}
 
+
+	
+	function tampil_kepegawaian()
+	{
+		$semua_data = array();
+		$ambil = $this->koneksi->query("SELECT * FROM kepegawaian");
+		while ($data_array = $ambil->fetch_assoc()) 
+		{
+			$semua_data[] = $data_array;
+		}
+		return $semua_data;	
+	}
+
+	function tampil_event()
+	{
+		$semua_data = array();
+		$ambil = $this->koneksi->query("SELECT * FROM event ORDER BY id_event ASC");
+		while ($data_array = $ambil->fetch_assoc()) 
+		{
+			$semua_data[] = $data_array;
+		}
+		return $semua_data;	
+	}
+
 	function tampil_guru()
 	{
 		$semua_data = array();
@@ -2277,6 +2373,24 @@ class guru
 		}
 		return $semua_data;	
 	}
+
+	function tampil_guru_only()
+	{
+		$semua_data = array();
+		$id_guru = $_SESSION['pengguna']['id_guru'];
+		$id_jenjang = $_SESSION['pengguna']['id_jenjang'];
+		$ambil = $this->koneksi->query("SELECT * FROM guru
+			-- LEFT JOIN pengguna ON guru.id_guru = guru.id_guru
+			LEFT JOIN jenjang ON guru.id_jenjang = jenjang.id_jenjang
+			WHERE jenjang.id_jenjang = $id_jenjang AND guru.id_guru = $id_guru
+			");
+		while ($data_array = $ambil->fetch_assoc()) 
+		{
+			$semua_data[] = $data_array;
+		}
+		return $semua_data;	
+	}
+
 
 	function tampil_guru_pjruangan()
 	{
@@ -2304,15 +2418,58 @@ class guru
 		
 	}
 
+	function ambil_kepegawaian($id)
+	{
+		$ambil = $this->koneksi->query("SELECT * FROM kepegawaian		 
+			 
+			 WHERE id = '$id' ");
+		$data_array = $ambil->fetch_assoc();
+		return $data_array;
+		
+	}
+
+	function ambil_event($id)
+	{
+		$ambil = $this->koneksi->query("SELECT * FROM event		 
+			 
+			 WHERE id_event = '$id' ");
+		$data_array = $ambil->fetch_assoc();
+		return $data_array;
+		
+	}
+
+
 	function ubah_guru($id_jenjang,  $nama_guru, $nip_guru,  $id_guru, $status_guru)
 	{
 		$detail_guru = $this->ambil_guru_admin($id_guru);
 		$this->koneksi->query("UPDATE guru SET id_jenjang='$id_jenjang',  nama_guru='$nama_guru', nip_guru='$nip_guru', status_guru='$status_guru'  WHERE id_guru='$id_guru' ");
 	}
 
+	function ubah_kepegawaian($nama_pegawai, $jenis_kelamin, $nip, $pendidikan, $lulus, $status, $id)
+	{
+		$detail_guru = $this->ambil_kepegawaian($id);
+		$this->koneksi->query("UPDATE kepegawaian SET nama_pegawai='$nama_pegawai',  jk='$jenis_kelamin', nip='$nip', pendidikan='$pendidikan', lulus='$lulus', status='$status'  WHERE id='$id' ");
+	}
+
+	function ubah_event($tahun, $nama_event, $keterangan, $id)
+	{
+		$detail_guru = $this->ambil_event($id);
+		$this->koneksi->query("UPDATE event SET tahun='$tahun',  nama_event='$nama_event', keterangan='$keterangan'  WHERE id_event='$id' ");
+	}
+
 	function hapus_guru($id_guru)
 	{
 		$this->koneksi->query("DELETE FROM guru WHERE id_guru='$id_guru' ");
+	}
+
+	function hapus_kepegawaian($id)
+	{
+		$this->koneksi->query("DELETE FROM kepegawaian WHERE id='$id' ");
+	}
+
+	function hapus_event($id)
+	{
+		$this->koneksi->query("DELETE FROM event WHERE id_event='$id' ");
 	}
 
 	function simpan_guru($id_jenjang, $nama_guru, $nip_guru, $status_guru)
@@ -2321,6 +2478,17 @@ class guru
 		$this->koneksi->query("INSERT INTO guru (id_jenjang, nama_guru, nip_guru, status_guru) VALUES ('$id_jenjang', '$nama_guru', '$nip_guru', '$status_guru')");
 	}
 
+	function simpan_kepegawaian($nama_pegawai, $jenis_kelamin, $nip, $pendidikan, $lulus, $status)
+	{
+		
+		$this->koneksi->query("INSERT INTO kepegawaian (nama_pegawai, jk, nip, pendidikan, lulus, status) VALUES ('$nama_pegawai', '$jenis_kelamin', '$nip', '$pendidikan', '$lulus', '$status')");
+	}
+
+	function simpan_event($tahun, $nama_event, $keterangan)
+	{
+		
+		$this->koneksi->query("INSERT INTO event (tahun, nama_event, keterangan) VALUES ('$tahun', '$nama_event', '$keterangan')");
+	}
 
 
 }

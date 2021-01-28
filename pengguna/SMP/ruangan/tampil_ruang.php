@@ -20,7 +20,7 @@
 
 
 $semua_peminjaman = $peminjaman->tampil_peminjaman_admin();
-$data_guru = $guru->tampil_guru();
+$data_guru = $guru->tampil_guru_only();
 	$data_jenjang = $jenjang->tampil_jenjang();
 	$data_ruang = $ruang->tampil_ruang();
 	$data_status = $status->tampil_status();

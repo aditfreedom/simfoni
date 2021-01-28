@@ -58,33 +58,16 @@ if (!isset($_SESSION['manajemen']))
         <ul class="nav" id="main-menu">
         <li><a href="index.php?halaman=home"><i class="fa fa-home"></i> Home</a></li>
         <li><a href="index.php?halaman=dashboard"><i class="fa fa-tachometer"></i> Dashboard</a></li>
-            <li><a href="index.php?halaman=tampil_ruang"><i class="fa fa-building"></i> Pemakaian ruangan</a></li>
+
+        <li  class="tr-tree">
+            <a href="#"><i class="fa fa-database"></i> Data Kepegawaian <i class="pull-right fa fa-angle-right"></i></a>
+            <ul class="tr-tree-menu"> 
+             <li><a href="index.php?halaman=tambah_kepegawaian"><i class="fa fa-plus"></i> Input Data</a></li>
+             <li><a href="index.php?halaman=tampil_kepegawaian"><i class="fa fa-table"></i> Tampil Data</a></li>
+           </ul>
+          </li>
 
             <li  class="tr-tree">
-            <a href="#"><i class="fa fa-user"></i> Supervisi <i class="pull-right fa fa-angle-right"></i></a>
-            <ul class="tr-tree-menu"> 
-             <li><a href="index.php?halaman=tambah_supervisi"><i class="fa fa-plus"></i> Input Data</a></li>
-             <li><a href="index.php?halaman=tampil_supervisi"><i class="fa fa-table"></i> Tampil Data</a></li>
-           </ul>
-          </li>
-
-          <li  class="tr-tree">
-            <a href="#"><i class="fa fa-graduation-cap"></i> Data Kegiatan Guru <i class="pull-right fa fa-angle-right"></i></a>
-            <ul class="tr-tree-menu"> 
-             <li><a href="index.php?halaman=tambah_kegiatan"><i class="fa fa-plus"></i> Input Data</a></li>
-             <li><a href="index.php?halaman=tampil_kegiatan"><i class="fa fa-table"></i> Tampil Data</a></li>
-           </ul>
-          </li>
-          
-          <li  class="tr-tree">
-            <a href="#"><i class="fa fa-database"></i> Data Kerjasama dan Kemitraan <i class="pull-right fa fa-angle-right"></i></a>
-            <ul class="tr-tree-menu"> 
-             <li><a href="index.php?halaman=tambah_mitra"><i class="fa fa-plus"></i> Input Data</a></li>
-             <li><a href="index.php?halaman=tampil_mitra"><i class="fa fa-table"></i> Tampil Data</a></li>
-               
-           </ul>
-          </li>
-          <li  class="tr-tree">
             <a href="#"><i class="fa fa-user"></i> Data Siswa <i class="pull-right fa fa-angle-right"></i></a>
             <ul class="tr-tree-menu"> 
             <li><a href="index.php?halaman=cek_tampil_siswa_sd"><i class="fa fa-table"></i> Data Siswa SD</a></li>
@@ -94,16 +77,65 @@ if (!isset($_SESSION['manajemen']))
              <li><a href="index.php?halaman=tambah_siswa"><i class="fa fa-plus"></i> Tambah Data Siswa</a></li>
             </ul>
           </li>
+
           <li  class="tr-tree">
-            <a href="#"><i class="fa fa-graduation-cap"></i> Lulusan <i class="pull-right fa fa-angle-right"></i></a>
+            <a href="#"><i class="fa fa-clipboard"></i> Rekap Jumlah Siswa Per TA <i class="pull-right fa fa-angle-right"></i></a>
             <ul class="tr-tree-menu"> 
-            <li><a href="index.php?halaman=tampil_lulusan"><i class="fa fa-table"></i> Tampil Data Lulusan</a></li>
-             <li><a href="index.php?halaman=tambah_lulusan"><i class="fa fa-plus"></i> Tambah Data Lulusan</a></li>
-            </ul>
+             <li><a href="index.php?halaman=tampil_rekapsiswa_sd"><i class="fa fa-table"></i> Jenjang SD</a></li>
+             <li><a href="index.php?halaman=tampil_rekapsiswa_smp"><i class="fa fa-table"></i> Jenjang SMP</a></li>
+             <li><a href="index.php?halaman=tampil_rekapsiswa_sma"><i class="fa fa-table"></i> Jenjang SMA</a></li>
+
+           </ul>
+          </li>
+
+          <!-- <li  class="tr-tree">
+            <a href="#"><i class="fa fa-graduation-cap"></i> Data Kegiatan Guru <i class="pull-right fa fa-angle-right"></i></a>
+            <ul class="tr-tree-menu"> 
+             <li><a href="index.php?halaman=tambah_kegiatan"><i class="fa fa-plus"></i> Input Data</a></li>
+             <li><a href="index.php?halaman=tampil_kegiatan"><i class="fa fa-table"></i> Tampil Data</a></li>
+           </ul>
+          </li> -->
+
+          <li  class="tr-tree">
+            <a href="#"><i class="fa fa-address-book"></i> Data Kerjasama dan Kemitraan <i class="pull-right fa fa-angle-right"></i></a>
+            <ul class="tr-tree-menu"> 
+             <li><a href="index.php?halaman=tambah_mitra"><i class="fa fa-plus"></i> Input Data</a></li>
+             <li><a href="index.php?halaman=tampil_mitra"><i class="fa fa-table"></i> Tampil Data</a></li>
+           </ul>
           </li>
 
           <li  class="tr-tree">
-            <a href="#"><i class="fa fa-table"></i> Input Laporan Kegiatan <i class="pull-right fa fa-angle-right"></i></a>
+            <a href="#"><i class="fa fa-calendar"></i> Data Event Besar <i class="pull-right fa fa-angle-right"></i></a>
+            <ul class="tr-tree-menu"> 
+             <li><a href="index.php?halaman=tambah_event"><i class="fa fa-plus"></i> Input Data</a></li>
+             <li><a href="index.php?halaman=tampil_event"><i class="fa fa-table"></i> Tampil Data</a></li>
+           </ul>
+          </li>
+
+            <li  class="tr-tree">
+            <a href="#"><i class="fa fa-user"></i> Data Supervisi <i class="pull-right fa fa-angle-right"></i></a>
+            <ul class="tr-tree-menu"> 
+             <li><a href="index.php?halaman=tambah_supervisi"><i class="fa fa-plus"></i> Input Data</a></li>
+             <li><a href="index.php?halaman=tampil_supervisi"><i class="fa fa-table"></i> Tampil Data</a></li>
+           </ul>
+          </li>
+
+
+          
+
+         
+          <li  class="tr-tree">
+            <a href="#"><i class="fa fa-graduation-cap"></i> Data Alumni<i class="pull-right fa fa-angle-right"></i></a>
+            <ul class="tr-tree-menu"> 
+            <li><a href="index.php?halaman=tampil_lulusan"><i class="fa fa-table"></i> Tampil Data Alumni</a></li>
+             <li><a href="index.php?halaman=tambah_lulusan"><i class="fa fa-plus"></i> Tambah Data Alumni</a></li>
+            </ul>
+          </li>
+
+          <li><a href="index.php?halaman=tampil_ruang"><i class="fa fa-history"></i> Histori Pemakaian ruangan</a></li>
+
+          <li  class="tr-tree">
+            <a href="#"><i class="fa fa-mouse-pointer"></i> Input Data Laporan Kegiatan <i class="pull-right fa fa-angle-right"></i></a>
             <ul class="tr-tree-menu"> 
              <li><a href="index.php?halaman=tambah_class_project"><i class="fa fa-plus"></i> Tambah Data Class Project</a></li>
              <li><a href="index.php?halaman=tambah_guest"><i class="fa fa-plus"></i> Tambah Data Guest Teacher</a></li>
@@ -114,7 +146,7 @@ if (!isset($_SESSION['manajemen']))
           </li>
 
            <li  class="tr-tree">
-            <a href="#"><i class="fa fa-table"></i> Tampil Data Kegiatan SD <i class="pull-right fa fa-angle-right"></i></a>
+            <a href="#"><i class="fa fa-list"></i> Data Kegiatan SD <i class="pull-right fa fa-angle-right"></i></a>
             <ul class="tr-tree-menu"> 
              <li><a href="index.php?halaman=cek_tampil_periode_class_project_sd"><i class="fa fa-circle"></i> Class Project</a></li>
              <li><a href="index.php?halaman=cek_tampil_periode_guest_sd"><i class="fa fa-circle"></i> Guest Teacher</a></li>
@@ -131,7 +163,7 @@ if (!isset($_SESSION['manajemen']))
             
 
            <li  class="tr-tree">
-            <a href="#"><i class="fa fa-table"></i> Tampil Data Kegiatan SMP <i class="pull-right fa fa-angle-right"></i></a>
+            <a href="#"><i class="fa fa-list"></i> Data Kegiatan SMP <i class="pull-right fa fa-angle-right"></i></a>
             <ul class="tr-tree-menu"> 
              <li><a href="index.php?halaman=cek_tampil_periode_class_project_smp"><i class="fa fa-circle"></i> Class Project</a></li>
              <li><a href="index.php?halaman=cek_tampil_periode_guest_smp"><i class="fa fa-circle"></i> Guest Teacher </a></li>
@@ -145,7 +177,7 @@ if (!isset($_SESSION['manajemen']))
           </li>
 
            <li  class="tr-tree">
-            <a href="#"><i class="fa fa-table"></i> Tampil Data Kegiatan SMA <i class="pull-right fa fa-angle-right"></i></a>
+            <a href="#"><i class="fa fa-list"></i> Data Kegiatan SMA <i class="pull-right fa fa-angle-right"></i></a>
             <ul class="tr-tree-menu"> 
               <li><a href="index.php?halaman=cek_tampil_periode_class_project_sma"><i class="fa fa-circle"></i> Class Project</a></li>                       
               <li><a href="index.php?halaman=cek_tampil_periode_guest_sma"><i class="fa fa-circle"></i> Guest Teacher</a></li>
@@ -160,7 +192,7 @@ if (!isset($_SESSION['manajemen']))
           </li>
 
           <li><a href="index.php?halaman=download"><i class="fa fa-download"></i> Download Template</a></li>
-          <li><a href="../template/Panduan Aplikasi Simfoni.pdf"><i class="fa fa-download"></i> Panduan Aplikasi</a></li>
+          <li><a href="../template/Panduan Aplikasi Simfoni.pdf"><i class="fa fa-info-circle"></i> Panduan Aplikasi</a></li>
 
      
                      
@@ -189,6 +221,67 @@ if (!isset($_SESSION['manajemen']))
         elseif ($_GET['halaman']=='lomba') 
         {
           include 'lomba/lomba.php';
+        }
+        elseif ($_GET['halaman']=='tampil_event') 
+        {
+          include 'event/event.php';
+        }
+        elseif ($_GET['halaman']=='hapus_event') 
+        {
+          include 'event/hapus_event.php';
+        }
+        elseif ($_GET['halaman']=='edit_event') 
+        {
+          include 'event/edit_event.php';
+        }
+        elseif ($_GET['halaman']=='tambah_event') 
+        {
+          include 'event/tambah_event.php';
+        }
+        elseif ($_GET['halaman']=='tampil_rekapsiswa_sd') 
+        {
+          include 'rekapsiswa/rekapsiswa_sd.php';
+        }
+        elseif ($_GET['halaman']=='tampil_rekapsiswa_smp') 
+        {
+          include 'rekapsiswa/rekapsiswa_smp.php';
+        }
+        elseif ($_GET['halaman']=='tampil_rekapsiswa_sma') 
+        {
+          include 'rekapsiswa/rekapsiswa_sma.php';
+        }
+        elseif ($_GET['halaman']=='hapus_rekapsiswa') 
+        {
+          include 'rekapsiswa/hapus_rekapsiswa.php';
+        }
+        elseif ($_GET['halaman']=='edit_rekapsiswa') 
+        {
+          include 'rekapsiswa/edit_rekapsiswa.php';
+        }
+        elseif ($_GET['halaman']=='tambah_rekapsiswa') 
+        {
+          include 'rekapsiswa/tambah_rekapsiswa.php';
+        }
+
+        elseif ($_GET['halaman']=='tampil_kepegawaian') 
+        {
+          include 'kepegawaian/kepegawaian.php';
+        }
+        elseif ($_GET['halaman']=='tambah_kepegawaian') 
+        {
+          include 'kepegawaian/tambah_kepegawaian.php';
+        }
+        elseif ($_GET['halaman']=='edit_kepegawaian') 
+        {
+          include 'kepegawaian/edit_kepegawaian.php';
+        }
+        elseif ($_GET['halaman']=='siswa') 
+        {
+          include 'siswa/siswa.php';
+        }
+        elseif ($_GET['halaman']=='hapus_kepegawaian') 
+        {
+          include 'kepegawaian/hapus_kepegawaian.php';
         }
         elseif ($_GET['halaman']=='tambah_supervisi') 
         {

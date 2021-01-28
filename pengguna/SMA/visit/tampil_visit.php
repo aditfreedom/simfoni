@@ -18,7 +18,7 @@
 // $semua_jenjang = $jenjang->tampil_jenjang();
 
 
-$semua_visit = $visit->tampil_visit();
+$semua_visit = $visit->tampil_visit_only();
 $semua_mapel = $mapel->tampil_mapel();
 $semua_kelas2 = $kelas2->tampil_kelas2();
 $semua_kelas3 = $kelas3->tampil_kelas3();
