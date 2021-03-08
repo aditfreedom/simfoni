@@ -17,8 +17,10 @@
 	// $user adalah objek user dari class.php
 	// tampil_user adalah fungsi pada class user dari class.php
 	// objek user menjalankan fungsi tampil user
-	$data_guru = $guru->tampil_kepegawaian();
-	$data_jenjang = $jenjang->tampil_jenjang_admin();
+
+	// $data_guru = $guru->rekapsiswa_sd();
+	// $data_jenjang = $jenjang->tampil_jenjang_admin();
+
 // 	echo "<pre>";
 // print_r($data_pengguna);
 // echo "</pre>";
@@ -37,33 +39,33 @@
 		</tr>
 		
 		<tr>
-		<td colspan="3" class="text-center">I</td>
-		<td colspan="3" class="text-center">II</td>
-		<td colspan="3" class="text-center">III</td>
-		<td colspan="3" class="text-center">IV</td>
-		<td colspan="3" class="text-center">V</td>
-		<td colspan="3" class="text-center">VI</td>
+		<th colspan="3" class="text-center">I</th>
+		<th colspan="3" class="text-center">II</th>
+		<th colspan="3" class="text-center">III</th>
+		<th colspan="3" class="text-center">IV</th>
+		<th colspan="3" class="text-center">V</th>
+		<th colspan="3" class="text-center">VI</th>
 		</tr>
 
 		<tr>
-		<td class="text-center">LK</td>
-		<td class="text-center">PR</td>
-		<td class="text-center">JLH</td>
-		<td class="text-center">LK</td>
-		<td class="text-center">PR</td>
-		<td class="text-center">JLH</td>
-		<td class="text-center">LK</td>
-		<td class="text-center">PR</td>
-		<td class="text-center">JLH</td>
-		<td class="text-center">LK</td>
-		<td class="text-center">PR</td>
-		<td class="text-center">JLH</td>
-		<td class="text-center">LK</td>
-		<td class="text-center">PR</td>
-		<td class="text-center">JLH</td>
-		<td class="text-center">LK</td>
-		<td class="text-center">PR</td>
-		<td class="text-center">JLH</td>
+		<th class="text-center">LK</th>
+		<th class="text-center">PR</th>
+		<th class="text-center">JLH</th>
+		<th class="text-center">LK</th>
+		<th class="text-center">PR</th>
+		<th class="text-center">JLH</th>
+		<th class="text-center">LK</th>
+		<th class="text-center">PR</th>
+		<th class="text-center">JLH</th>
+		<th class="text-center">LK</th>
+		<th class="text-center">PR</th>
+		<th class="text-center">JLH</th>
+		<th class="text-center">LK</th>
+		<th class="text-center">PR</th>
+		<th class="text-center">JLH</th>
+		<th class="text-center">LK</th>
+		<th class="text-center">PR</th>
+		<th class="text-center">JLH</th>
 		</tr>
 	</thead>
 	<tbody>
