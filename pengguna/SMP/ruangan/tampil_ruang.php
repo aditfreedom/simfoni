@@ -19,7 +19,7 @@
 // $semua_jenjang = $jenjang->tampil_jenjang();
 
 
-$semua_peminjaman = $peminjaman->tampil_peminjaman_admin();
+$semua_peminjaman = $peminjaman->tampil_peminjaman_admin3();
 $data_guru = $guru->tampil_guru_only();
 	$data_jenjang = $jenjang->tampil_jenjang();
 	$data_ruang = $ruang->tampil_ruang();
@@ -59,7 +59,7 @@ $data_guru = $guru->tampil_guru_only();
 <div class="row">
 	<div class="col-md-12">
 	
-		<table class="table table-bordered" id="data-table">
+		<table class="table table-stripped" id="data-table" style="width:100%;">
 			
 			<thead>
 				<tr>
@@ -74,7 +74,7 @@ $data_guru = $guru->tampil_guru_only();
 					<th>Status Pengajuan</th>					
 					<th>Status Persetujuan</th>
 					<th>Keterangan</th>
-					<th class="hidden-print">Opsi</th>
+					<!-- <th class="hidden-print">Opsi</th> -->
 					<!-- <th class="hidden-print">Proposal</th> -->
 				<!--	<th class="hidden-print">Opsi</th> -->
 					<!-- <th>Upload Laporan</th> -->
@@ -84,7 +84,16 @@ $data_guru = $guru->tampil_guru_only();
 				
 			<tbody>
 				<?php foreach ($semua_peminjaman as $key => $value): ?>
-			
+					<?php
+			if($value['nama_status_final']=="Disetujui"){
+				$class="btn-success";
+			}elseif($value['nama_status_final']=="Dibatalkan"){
+				$class="btn-danger";
+			}
+			else{
+				$class="";
+			}
+			?>
 		<tr>
 			<td><?php echo $key+1; ?></td>
 			<td><?php echo $value['nama_guru'] ;?>  </td>
@@ -94,13 +103,13 @@ $data_guru = $guru->tampil_guru_only();
 			<td> <?php echo ($value['jam']) ?></td>
 			<td><?php echo $value['keperluan']; ?></td> 
 			<td><?php echo $value['nama_status']; ?></td> 
-			<td><?php echo $value['nama_status_final']; ?></td> 
+			<td><a class="btn <?=$class?>"><?php echo $value['nama_status_final']; ?></a></td> 
 			<td><?php echo $value['keterangan']; ?></td> 
 			
 			
-			<td class="hidden-print">
+			<!-- <td class="hidden-print"> -->
 
-				<a href="index.php?halaman=edit_ruang&id_peminjaman=<?php echo $value['id_peminjaman']; ?>" class="" >Ubah Data</a> <br> 
+				<!-- <a href="index.php?halaman=edit_ruang&id_peminjaman=<?php echo $value['id_peminjaman']; ?>" class="btn btn-warning" >Ubah Data</a> <br>  -->
 				<!--	<a href="index.php?halaman=hapus_ruang&id_peminjaman=<?php //echo $value['id_peminjaman']; ?>" class="" onclick="return confirm('hapus data Pemakaian ruang  <?php //echo $value["nama_ruang"]; ?>') " >Hapus Data</a> <br> -->
 
 			<!-- </td>
@@ -130,7 +139,7 @@ $data_guru = $guru->tampil_guru_only();
 			</tbody>
 		</table>
 			<div class="text-right">
-<a href="" onclick="print()" class="btn btn-success hidden-print"><i class="fa fa-print"></i> Cetak Laporan</a>
+<!-- <a href="" onclick="print()" class="btn btn-success hidden-print"><i class="fa fa-print"></i> Cetak Laporan</a> -->
 </div>
 </div>
 		

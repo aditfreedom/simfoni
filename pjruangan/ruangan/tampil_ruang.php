@@ -78,7 +78,16 @@ $data_guru = $guru->tampil_guru_pjruangan();
 				
 			<tbody>
 				<?php foreach ($semua_peminjaman as $key => $value): ?>
-			
+					<?php
+			if($value['nama_status_final']=="Disetujui"){
+				$class="btn-success";
+			}elseif($value['nama_status_final']=="Dibatalkan"){
+				$class="btn-danger";
+			}
+			else{
+				$class="";
+			}
+			?>
 		<tr>
 			<td><?php echo $key+1; ?></td>
 			<td><?php echo $value['nama_guru'] ;?>  </td>
@@ -88,14 +97,14 @@ $data_guru = $guru->tampil_guru_pjruangan();
 			<td> <?php echo ($value['jam']) ?></td>
 			<td><?php echo $value['keperluan']; ?></td> 
 			<td><?php echo $value['nama_status']; ?></td> 
-			<td><?php echo $value['nama_status_final']; ?></td> 
+			<td><a class="btn <?=$class?>"><?php echo $value['nama_status_final']; ?></a></td> 
 			<td><?php echo $value['keterangan']; ?></td> 
 			
 			
 			<td class="hidden-print">
 
-				<a href="index.php?halaman=edit_ruang&id_peminjaman=<?php echo $value['id_peminjaman']; ?>" class="" >Ubah Data</a> <br> 
-				<a href="index.php?halaman=hapus_ruang&id_peminjaman=<?php echo $value['id_peminjaman']; ?>" class="" onclick="return confirm('hapus pengajuan pemakaian dari <?php echo $value["nama_guru"]; ?>') " >Hapus Data</a> <br>
+				<a href="index.php?halaman=edit_ruang&id_peminjaman=<?php echo $value['id_peminjaman']; ?>" class="btn btn-warning">Ubah Data</a> <br> 
+				<a href="index.php?halaman=hapus_ruang&id_peminjaman=<?php echo $value['id_peminjaman']; ?>" class="btn btn-danger" onclick="return confirm('hapus pengajuan pemakaian dari <?php echo $value["nama_guru"]; ?>') " >Hapus Data</a> <br>
 				
 				
 						

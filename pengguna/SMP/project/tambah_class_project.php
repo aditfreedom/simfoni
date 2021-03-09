@@ -122,7 +122,7 @@
 				<label>Tema Class Project</label>
 				<input type="text" name="tema_project" class="form-control" required="" placeholder="kesesuaian antara materi pejaran dengan apa yang akan dilakukan siswa dalam project">
 			</div>
-
+		
 			<div class="form-group">
 					<label>Waktu Pelaksanaan</label>
 					<input type="date" name="waktu_1" class="" required=""> 	

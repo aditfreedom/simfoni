@@ -100,8 +100,8 @@ $data_guru = $guru->tampil_guru();
 			
 			<td class="hidden-print">
 
-				<a href="index.php?halaman=edit_ruang&id_peminjaman=<?php echo $value['id_peminjaman']; ?>" class="" >Ubah Data</a> <br> 
-				<a href="index.php?halaman=hapus_ruang&id_peminjaman=<?php echo $value['id_peminjaman']; ?>" class="" onclick="return confirm('hapus data Pemakaian ruang  <?php echo $value["nama_ruang"]; ?>') " >Hapus Data</a> <br>
+				<a href="index.php?halaman=edit_ruang&id_peminjaman=<?php echo $value['id_peminjaman']; ?>" class="btn btn-warning" >Ubah Data</a> <br> 
+				<a href="index.php?halaman=hapus_ruang&id_peminjaman=<?php echo $value['id_peminjaman']; ?>" class="btn btn-danger" onclick="return confirm('hapus data Pemakaian ruang  <?php echo $value["nama_ruang"]; ?>') " >Hapus Data</a> <br>
 
 			<!-- </td>
 

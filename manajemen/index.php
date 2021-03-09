@@ -57,7 +57,7 @@ if (!isset($_SESSION['manajemen']))
         <ul class="nav" id="main-menu">
         <ul class="nav" id="main-menu">
         <li><a href="index.php?halaman=home"><i class="fa fa-home"></i> Home</a></li>
-        <li><a href="index.php?halaman=dashboard"><i class="fa fa-tachometer"></i> Dashboard</a></li>
+        <!-- <li><a href="index.php?halaman=dashboard"><i class="fa fa-tachometer"></i> Dashboard</a></li> -->
 
         <li  class="tr-tree">
             <a href="#"><i class="fa fa-database"></i> Data Kepegawaian <i class="pull-right fa fa-angle-right"></i></a>
@@ -250,17 +250,17 @@ if (!isset($_SESSION['manajemen']))
         {
           include 'rekapsiswa/rekapsiswa_sma.php';
         }
-        elseif ($_GET['halaman']=='hapus_rekapsiswa') 
+        elseif ($_GET['halaman']=='hapus_rekapsiswasd') 
         {
-          include 'rekapsiswa/hapus_rekapsiswa.php';
+          include 'rekapsiswa/hapus_rekapsiswasd.php';
         }
-        elseif ($_GET['halaman']=='edit_rekapsiswa') 
+        elseif ($_GET['halaman']=='edit_rekapsiswasd') 
         {
-          include 'rekapsiswa/edit_rekapsiswa.php';
+          include 'rekapsiswa/edit_rekapsiswasd.php';
         }
-        elseif ($_GET['halaman']=='tambah_rekapsiswa') 
+        elseif ($_GET['halaman']=='tambah_rekapsiswasd') 
         {
-          include 'rekapsiswa/tambah_rekapsiswa.php';
+          include 'rekapsiswa/tambah_rekapsiswasd.php';
         }
 
         elseif ($_GET['halaman']=='tampil_kepegawaian') 
@@ -977,7 +977,12 @@ if (!isset($_SESSION['manajemen']))
     <script>
       $(document).ready(function() {
           $('#data-table').DataTable({
+            "scrollX": true,
+            pageLength: 5,
         dom: 'Bfrtip',
+        "oLanguage": {
+   "sSearch": "Cari : "
+ },
         buttons: [
            {extend: 'excel',text: ' Simpan File Excel',className: 'btn btn-primary', exportOptions: {
     columns: ':not(:last-child)'} }

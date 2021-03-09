@@ -39,7 +39,7 @@ $semua_visit_home = $visit_home->tampil_supervisi();
 <div class="row">
 	<div class="col-md-12">
 	
-		<table class="table table-bordered" id="data-table">
+		<table class="table table-stripped" id="data-table" style="width:100%;">
 			
 			
 			<thead>
@@ -75,14 +75,14 @@ $semua_visit_home = $visit_home->tampil_supervisi();
 			<td>
 			<?php echo $value['laporan'] ?> <br> <br>
 			<!-- <?php //echo $value['proposal'] ?> <br> -->
-				<a href="index.php?halaman=upload_supervisi&id_supervisi=<?php echo $value['id_supervisi']; ?>" class="" >Upload File</a> <br>
+				<a href="index.php?halaman=upload_supervisi&id_supervisi=<?php echo $value['id_supervisi']; ?>" class="btn btn-primary" >Upload File</a> <br>
 				<!-- <a href="index.php?halaman=upload_proposal_visit_home&id_visit_home=<?php //echo $value['id_visit_home']; ?>" class="" >Upload Proposal</a> <br>	 -->
-				<a href="../laporan/supervisi/<?php echo $value['laporan'] ?>" class="" >Download File</a>	 <br>
+				<a href="../laporan/supervisi/<?php echo $value['laporan'] ?>" class="btn btn-success" >Download File</a>	 <br>
 
 					
 
-				<a href="index.php?halaman=edit_supervisi&id_supervisi=<?php echo $value['id_supervisi']; ?>" class="" >Ubah Data</a> <br> <br>
-				<a href="index.php?halaman=hapus_supervisi&id_supervisi=<?php echo $value['id_supervisi']; ?>" class="" onclick="return confirm('Hapus data supervisi?') " >Hapus Data</a> 
+				<a href="index.php?halaman=edit_supervisi&id_supervisi=<?php echo $value['id_supervisi']; ?>" class="btn btn-warning" >Ubah Data</a> <br>
+				<a href="index.php?halaman=hapus_supervisi&id_supervisi=<?php echo $value['id_supervisi']; ?>" class="btn btn-danger" onclick="return confirm('Hapus data supervisi?') " >Hapus Data</a> 
 				
 						
 			</td>

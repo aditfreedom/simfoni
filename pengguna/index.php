@@ -308,7 +308,12 @@ if (!isset($_SESSION['pengguna']) OR $_SESSION['pengguna']['nama_jenjang'] !== "
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
     <script>
       $(document).ready(function() {
-          $('#data-table').DataTable();
+          $('#data-table').DataTable({
+            "scrollX": true,
+            pageLength: 5,
+            "sSearch": "Cari : "
+          });
+          
       } );
     </script>
 

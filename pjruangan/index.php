@@ -310,6 +310,8 @@ if (!isset($_SESSION['pjruangan']))
       $(document).ready(function() {
           $('#data-table').DataTable({
         dom: 'Bfrtip',
+        pageLength: 5,
+        "scrollX": true,
         buttons: [
            {extend: 'excel',text: ' Simpan Ke File Excel',className: 'btn btn-primary', exportOptions: {
     columns: ':not(:last-child)'} }

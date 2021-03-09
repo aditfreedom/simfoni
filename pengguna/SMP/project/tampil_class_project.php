@@ -57,7 +57,7 @@ $semua_kelas4 = $kelas4->tampil_kelas4();
 <div class="row">
 	<div class="col-md-12">
 	
-		<table class="table table-bordered" id="data-table">
+		<table class="table table-stripped" id="data-table" style="width:100%;">
 			
 			<thead>
 				<tr>
@@ -128,7 +128,7 @@ $semua_kelas4 = $kelas4->tampil_kelas4();
 			</tbody>
 		</table>
 			<div class="text-right">
-<a href="" onclick="print()" class="btn btn-success hidden-print"><i class="fa fa-print"></i> Cetak Laporan</a>
+<!-- <a href="" onclick="print()" class="btn btn-success hidden-print"><i class="fa fa-print"></i> Cetak Laporan</a> -->
 </div>
 </div>
 		

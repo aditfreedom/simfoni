@@ -574,6 +574,8 @@ class project
 		return $semua_data;
 	}	
 
+	
+
 
 	function tampil_project_admin()
 	{
@@ -2321,6 +2323,17 @@ class guru
 		return $semua_data;	
 	}
 
+	function rekapsiswa_sd()
+	{
+		$semua_data = array();
+		$ambil = $this->koneksi->query("SELECT * FROM rekapsiswasd");
+		while ($data_array = $ambil->fetch_assoc()) 
+		{
+			$semua_data[] = $data_array;
+		}
+		return $semua_data;	
+	}
+
 	function tampil_guru_admin2()
 	{
 		$semua_data = array();
@@ -2344,6 +2357,7 @@ class guru
 			$semua_data[] = $data_array;
 		}
 		return $semua_data;	
+		
 	}
 
 	function tampil_event()
@@ -2428,6 +2442,16 @@ class guru
 		
 	}
 
+	function ambil_rekapsiswasd($id)
+	{
+		$ambil = $this->koneksi->query("SELECT * FROM rekapsiswasd		 
+			 
+			 WHERE id = '$id' ");
+		$data_array = $ambil->fetch_assoc();
+		return $data_array;
+		
+	}
+
 	function ambil_event($id)
 	{
 		$ambil = $this->koneksi->query("SELECT * FROM event		 
@@ -2467,6 +2491,11 @@ class guru
 		$this->koneksi->query("DELETE FROM kepegawaian WHERE id='$id' ");
 	}
 
+	function hapus_rekapsd($id)
+	{
+		$this->koneksi->query("DELETE FROM rekapsiswasd WHERE id='$id' ");
+	}
+
 	function hapus_event($id)
 	{
 		$this->koneksi->query("DELETE FROM event WHERE id_event='$id' ");
@@ -2482,6 +2511,17 @@ class guru
 	{
 		
 		$this->koneksi->query("INSERT INTO kepegawaian (nama_pegawai, jk, nip, pendidikan, lulus, status) VALUES ('$nama_pegawai', '$jenis_kelamin', '$nip', '$pendidikan', '$lulus', '$status')");
+	}
+
+	function simpan_rekapsd($tahun_ajaran, $lk1, $pr1, $lk2, $pr2, $lk3, $pr3, $lk4, $pr4, $lk5, $pr5, $lk6, $pr6)
+	{
+		
+		$this->koneksi->query("INSERT INTO rekapsiswasd (tahun_ajaran, lk1, pr1, lk2, pr2, lk3, pr3, lk4, pr4, lk5, pr5, lk6, pr6 ) VALUES ('$tahun_ajaran', '$lk1', '$pr1', '$lk2', '$pr2', '$lk3', '$pr3', '$lk4', '$pr4', '$lk5', '$pr5', '$lk6', '$pr6')");
+	}
+
+	function ubah_rekapsd($tahun_ajaran, $lk1, $pr1, $lk2, $pr2, $lk3, $pr3, $lk4, $pr4, $lk5, $pr5, $lk6, $pr6, $id)
+	{
+		$this->koneksi->query("UPDATE rekapsiswasd SET tahun_ajaran='$tahun_ajaran', lk1='$lk1', pr1='$pr1', lk2='$lk2', pr2='$pr2', lk3='$lk3', pr3='$pr3', lk4='$lk4', pr4='$pr4', lk5='$lk5', pr5='$pr5', lk6='$lk6', pr6='$pr6' WHERE id='$id' ");
 	}
 
 	function simpan_event($tahun, $nama_event, $keterangan)
@@ -3867,6 +3907,30 @@ class peminjaman
 		 	LEFT JOIN status ON peminjaman.id_status = status.id_status
 		 	LEFT JOIN status_final ON peminjaman.id_status_final = status_final.id_status_final
 
+
+		 	ORDER BY peminjaman.id_status_final, peminjaman.waktu_1 ASC
+		 	
+		 	");
+		while ($data_array = $ambil->fetch_assoc()) 
+		{
+			$semua_data[] = $data_array;
+		}
+		return $semua_data;
+	}	
+
+	function tampil_peminjaman_admin3()
+	{
+		$semua_data = array();
+		$id_jenjang = $_SESSION['pengguna']['id_guru'];
+		
+		 $ambil = $this->koneksi->query("SELECT * FROM peminjaman
+		 	
+		 	LEFT JOIN guru ON peminjaman.id_guru = guru.id_guru	 
+		 	LEFT JOIN ruang ON peminjaman.id_ruang = ruang.id_ruang	
+		 	LEFT JOIN jenjang ON peminjaman.id_jenjang = jenjang.id_jenjang 
+		 	LEFT JOIN status ON peminjaman.id_status = status.id_status
+		 	LEFT JOIN status_final ON peminjaman.id_status_final = status_final.id_status_final
+			 WHERE peminjaman.id_guru = $id_jenjang
 
 		 	ORDER BY peminjaman.id_status_final, peminjaman.waktu_1 ASC
 		 	
