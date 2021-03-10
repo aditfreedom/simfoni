@@ -63,8 +63,8 @@ $semua_ruang = $ruang->tampil_ruang_admin();
 			
 			
 			<td>
-				<a href="index.php?halaman=edit_ruang&id_ruang=<?php echo $value['id_ruang'] ?>" class="btn btn-warning">Edit</a>
-				<a href="index.php?halaman=hapus_ruang&id_ruang=<?php echo $value['id_ruang']; ?>" class="btn btn-danger" onclick="return confirm('hapus data <?php echo $value["nama_ruang"]; ?> ?')">Hapus</a>
+				<a href="index.php?halaman=edit_ruangan&id_ruang=<?php echo $value['id_ruang'] ?>" class="btn btn-warning">Edit</a>
+				<a href="index.php?halaman=hapus_ruangan&id_ruang=<?php echo $value['id_ruang']; ?>" class="btn btn-danger" onclick="return confirm('hapus data <?php echo $value["nama_ruang"]; ?> ?')">Hapus</a>
 			</td>
 		</tr>
 		<?php endforeach ?>

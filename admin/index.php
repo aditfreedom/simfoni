@@ -61,7 +61,6 @@ if (!isset($_SESSION['admin']))
       <ul class="nav" id="main-menu">
         <li><a href="index.php?halaman=home"><i class="fa fa-home"></i> Home</a></li>
         <ul class="nav" id="main-menu">
-        <li><a href="index.php?halaman=dashboard"><i class="fa fa-tachometer"></i> Dashboard</a></li>
 
           <li  class="tr-tree">
             <a href="#"><i class="fa fa-database">  </i> Database <i class="pull-right fa fa-angle-right"></i></a>
@@ -652,7 +651,7 @@ if (!isset($_SESSION['admin']))
         {
           include 'ruang/ruang.php';
         }
-        elseif ($_GET['halaman']=='edit_ruang') 
+        elseif ($_GET['halaman']=='edit_ruangan') 
         {
           include 'ruang/edit_ruang.php';
         }
@@ -660,7 +659,7 @@ if (!isset($_SESSION['admin']))
         {
           include 'ruang/tambah_ruang.php';
         }
-        elseif ($_GET['halaman']=='hapus_ruang') 
+        elseif ($_GET['halaman']=='hapus_ruangan') 
         {
           include 'ruang/hapus_ruang.php';
         }

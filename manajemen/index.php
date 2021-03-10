@@ -242,6 +242,7 @@ if (!isset($_SESSION['manajemen']))
         {
           include 'rekapsiswa/rekapsiswa_sd.php';
         }
+        
         elseif ($_GET['halaman']=='tampil_rekapsiswa_smp') 
         {
           include 'rekapsiswa/rekapsiswa_smp.php';
@@ -254,13 +255,25 @@ if (!isset($_SESSION['manajemen']))
         {
           include 'rekapsiswa/hapus_rekapsiswasd.php';
         }
+        elseif ($_GET['halaman']=='hapus_rekapsiswasmp') 
+        {
+          include 'rekapsiswa/hapus_rekapsiswasmp.php';
+        }
         elseif ($_GET['halaman']=='edit_rekapsiswasd') 
         {
           include 'rekapsiswa/edit_rekapsiswasd.php';
         }
+        elseif ($_GET['halaman']=='edit_rekapsiswasmp') 
+        {
+          include 'rekapsiswa/edit_rekapsiswasmp.php';
+        }
         elseif ($_GET['halaman']=='tambah_rekapsiswasd') 
         {
           include 'rekapsiswa/tambah_rekapsiswasd.php';
+        }
+        elseif ($_GET['halaman']=='tambah_rekapsiswasmp') 
+        {
+          include 'rekapsiswa/tambah_rekapsiswasmp.php';
         }
 
         elseif ($_GET['halaman']=='tampil_kepegawaian') 

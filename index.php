@@ -11,17 +11,21 @@ window.location.href = "http://www.detik.com"
 	<title>SIMFONI</title>
 	<link rel="icon" href="ssb.png" type="image/png">
 	<link rel="stylesheet" type="text/css" href="assets/css/login_admin.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
 	
 </head>
+<script src="https://kit.fontawesome.com/2d7830743a.js" crossorigin="anonymous"></script>
+
 <body>
 </body>
 <br/>
 <br/>
 <p></p>
 <p></p>
-<h1 align="center">SIMFONI</h1>
-<h1 align="center">SISTEM INFORMASI MANAJEMEN FORM ONLINE</h1>
-<h1 align="center">SEKOLAH SUKMA BANGSA <?php echo strtoupper ($db_lokasi)?>	</h1>
+<h2 align="center">SIMFONI</h2>
+<h2 align="center">SISTEM INFORMASI MANAJEMEN FORM ONLINE</h2>
+<h2 align="center">SEKOLAH SUKMA BANGSA <?php echo strtoupper ($db_lokasi)?>	</h2>
 
 <div class="kotak_login">
 	<img src="logo.png" class="gambar" align="middle">
@@ -29,19 +33,22 @@ window.location.href = "http://www.detik.com"
 	<br/>
 	<form method="POST">
 		<!--<label>Username</label>-->
-
-		<input type="text" name="username" class="form_login" placeholder="Username" required="">
-		<!--<label>Password</label>-->
-
-		<input type="password" name="password" class="form_login" placeholder="Password" required="">
-
-		<input type="submit" class="tombol_login" value="LOGIN" name="login">
-
-		<br/>
-		<br/>
+		<div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Username" name="username" required>
+            </div>
+            <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-key"></i></span>
+                </div>
+                <input type="password" class="form-control" placeholder="Password" name="password" required>
+            </div>
+			<input type="submit" class="btn btn-info font-weight-bold" style="width:100%;" value="LOGIN" name="login">
+		</div>
 	</form>
-
-
+</div>
 	<?php 
 	if (isset($_POST['login']))
 	{
