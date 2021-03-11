@@ -73,14 +73,14 @@
 
 
 			<div class="form-group">
-				<label>Universitas/Sekolah</label>
+				<label>Universitas</label>
 				<input type="text" name="nama_kampus" class="form-control" required="">
 			</div>
 
 			<div class="form-group">
-				<label>Status Sekolah/PT</label>
+				<label>Status</label>
 				<select class="form-control" name="id_statuspt">
-					<option value="">Pilih Status Sekolah/PT</option>
+					<option value="">Pilih Status PT</option>
 				<?php foreach ($data_statuspt as $key => $value): ?>
 					<option value="<?php echo $value['id_statuspt'] ?>" > <?php echo $value['nama_statuspt'] ?> </option>					
 				<?php endforeach ?>					
@@ -89,17 +89,17 @@
 
 			<div class="form-group">
 				<label>Jalur Masuk</label>
-				<input type="text" name="jalur_kampus" class="form-control" required="" placeholder="Bila tidak ada, isi tanda -">
+				<input type="text" name="jalur_kampus" class="form-control" required="">
 			</div>
 
 			<div class="form-group">
 				<label>Program Studi</label>
-				<input type="text" name="jurusan_kampus" class="form-control" required="" placeholder="Bila tidak ada, isi tanda -">
+				<input type="text" name="jurusan_kampus" class="form-control" required="">
 			</div>
 
 			<div class="form-group">
 				<label>Keterangan</label>
-				<input type="text" name="ket_lulus" class="form-control" required="" placeholder="Bila tidak ada, isi tanda -">
+				<input type="text" name="ket_lulus" class="form-control" required="">
 			</div>
 
 			

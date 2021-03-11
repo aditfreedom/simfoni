@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-6">
-		<h3>Data Semua Lulusan</h3>
+		<h3>Data Semua Lulusan SMA</h3>
 		<h3>Sekolah Sukma Bangsa <?php echo  ($db_lokasi)?></h3>
 	</div>
 	<div class="col-md-6">
@@ -28,7 +28,7 @@
 <!-- melihat isi array data user -->
 <!-- <pre><?php //print_r($data_user); ?></pre>  -->
 
-<table class="table table-stripped" id="data-table" style="width:100%;" >
+<table class="table table-bordered" id="data-table" >
 	<thead>
 		<tr>
 			<th>No</th>			
@@ -36,7 +36,7 @@
 			<th>Nama Siswa</th>	
 			<th>Jenis Kelamin</th>				
 			<th>Jurusan</th>
-			<th>Universitas/Sekolah</th>	
+			<th>Universitas</th>	
 			<th>Status</th>	
 			<th>Jalur Masuk</th>	
 			<th>Program Studi</th>
@@ -62,8 +62,8 @@
 			
 			
 			<td class="hidden-print"> 
-				<a href="index.php?halaman=edit_lulusan&id_lulusan=<?php echo $value['id_lulusan']; ?>" class="btn btn-warning" >Ubah Data</a> <br> <br>
-				<a href="index.php?halaman=hapus_lulusan&id_lulusan=<?php echo $value['id_lulusan']; ?>" class="btn btn-danger" onclick="return confirm('hapus data lulusan <?php echo $value["nama_siswa"]; ?>') " >Hapus Data</a> 
+				<a href="index.php?halaman=edit_lulusan&id_lulusan=<?php echo $value['id_lulusan']; ?>" class="" >Ubah Data</a> <br> <br>
+				<a href="index.php?halaman=hapus_lulusan&id_lulusan=<?php echo $value['id_lulusan']; ?>" class="" onclick="return confirm('hapus data lulusan <?php echo $value["nama_siswa"]; ?>') " >Hapus Data</a> 
 				
 						
 			</td>
@@ -72,5 +72,6 @@
 	</tbody>
 </table>
 <div class="text-right">
+<a href="" onclick="print()" class="btn btn-success hidden-print"><i class="fa fa-print"></i> Cetak</a>
 </div>
 </div>

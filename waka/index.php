@@ -60,14 +60,8 @@ if (!isset($_SESSION['waka']))
         <li><a href="index.php?halaman=home"><i class="fa fa-home"></i> Home</a></li>
            <li><a href="index.php?halaman=tambah_lulusan"><i class="fa fa-graduation-cap"></i> Tambah Data Lulusan</a></li>
            <li><a href="index.php?halaman=lomba"><i class="fa fa-table"></i> Tampil Semua Data Prestasi</a></li>
-           <li  class="tr-tree">
-              <a href="#"><i class="fa fa-table"></i> Tampil Data Alumni<i class="pull-right fa fa-angle-right"></i></a>
-               <ul class="tr-tree-menu">   
-               <li><a href="index.php?halaman=lulusan"><i class="fa fa-database"></i> Alumni SD </a></li>
-               <li><a href="index.php?halaman=lulusan"><i class="fa fa-database"></i> Alumni SMP </a></li>
-               <li><a href="index.php?halaman=lulusan"><i class="fa fa-database"></i> Alumni SMA </a></li>
-            </ul>
-          </li>
+           <li><a href="index.php?halaman=lulusan"><i class="fa fa-database"></i> Data Alumni </a></li>
+
             <li><a href="index.php?halaman=cek_tampil_periode_lulusan"><i class="fa fa-table"></i> Tampil Data Lulusan Per Tahun</a></li>
 
            <!-- <li  class="tr-tree">
