@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Mar 2021 pada 08.20
+-- Waktu pembuatan: 11 Mar 2021 pada 09.02
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 7.4.14
 
@@ -559,7 +559,8 @@ CREATE TABLE `jurusan` (
 
 INSERT INTO `jurusan` (`id_jurusan`, `nama_jurusan`) VALUES
 (1, 'IPA'),
-(2, 'IPS');
+(2, 'IPS'),
+(3, 'LAINNYA');
 
 -- --------------------------------------------------------
 
@@ -1826,7 +1827,9 @@ INSERT INTO `mapel1` (`id_mapel1`, `id_jenjang`, `nama_mapel1`) VALUES
 (41, '1', 'PPKN'),
 (42, '1', 'SBK'),
 (43, '2', 'Bimbingan & Konseling'),
-(44, '3', 'Bimbingan & Konseling');
+(44, '3', 'Bimbingan & Konseling'),
+(45, '2', 'IPA TERPADU (FISIKA)'),
+(46, '2', 'IPA TERPADU (BIOLOGI)');
 
 -- --------------------------------------------------------
 
@@ -1888,7 +1891,9 @@ INSERT INTO `mapel2` (`id_mapel2`, `id_jenjang`, `nama_mapel2`) VALUES
 (41, '1', 'PPKN'),
 (42, '1', 'SBK'),
 (43, '2', 'Bimbingan & Konseling'),
-(44, '3', 'Bimbingan & Konseling');
+(44, '3', 'Bimbingan & Konseling'),
+(45, '2', 'IPA TERPADU (FISIKA)'),
+(46, '2', 'IPA TERPADU (BIOLOGI)');
 
 -- --------------------------------------------------------
 
@@ -1950,7 +1955,9 @@ INSERT INTO `mapel3` (`id_mapel3`, `id_jenjang`, `nama_mapel3`) VALUES
 (41, '1', 'PPKN'),
 (42, '1', 'SBK'),
 (43, '2', 'Bimbingan & Konseling'),
-(44, '3', 'Bimbingan & Konseling');
+(44, '3', 'Bimbingan & Konseling'),
+(45, '2', 'IPA TERPADU (FISIKA)'),
+(46, '2', 'IPA TERPADU (BIOLOGI)');
 
 -- --------------------------------------------------------
 
@@ -2012,7 +2019,9 @@ INSERT INTO `mapel4` (`id_mapel4`, `id_jenjang`, `nama_mapel4`) VALUES
 (41, '1', 'PPKN'),
 (42, '1', 'SBK'),
 (43, '2', 'Bimbingan & Konseling'),
-(44, '3', 'Bimbingan & Konseling');
+(44, '3', 'Bimbingan & Konseling'),
+(45, '2', 'IPA TERPADU (FISIKA)'),
+(46, '2', 'IPA TERPADU (BIOLOGI)');
 
 -- --------------------------------------------------------
 
@@ -3811,7 +3820,9 @@ INSERT INTO `statuspt` (`id_statuspt`, `nama_statuspt`) VALUES
 (1, 'PTN'),
 (2, 'PTS'),
 (3, 'SEKOLAH KEDINASAN'),
-(4, 'INFORMAL');
+(4, 'INFORMAL'),
+(5, 'SEKOLAH NEGERI'),
+(6, 'SEKOLAH SWASTA');
 
 -- --------------------------------------------------------
 
@@ -4436,7 +4447,7 @@ ALTER TABLE `jk`
 -- AUTO_INCREMENT untuk tabel `jurusan`
 --
 ALTER TABLE `jurusan`
-  MODIFY `id_jurusan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_jurusan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `kegiatan`
@@ -4514,25 +4525,25 @@ ALTER TABLE `mapel`
 -- AUTO_INCREMENT untuk tabel `mapel1`
 --
 ALTER TABLE `mapel1`
-  MODIFY `id_mapel1` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_mapel1` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT untuk tabel `mapel2`
 --
 ALTER TABLE `mapel2`
-  MODIFY `id_mapel2` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_mapel2` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT untuk tabel `mapel3`
 --
 ALTER TABLE `mapel3`
-  MODIFY `id_mapel3` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_mapel3` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT untuk tabel `mapel4`
 --
 ALTER TABLE `mapel4`
-  MODIFY `id_mapel4` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_mapel4` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT untuk tabel `minggu`
@@ -4622,7 +4633,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT untuk tabel `statuspt`
 --
 ALTER TABLE `statuspt`
-  MODIFY `id_statuspt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_statuspt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `status_final`
