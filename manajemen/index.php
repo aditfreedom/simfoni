@@ -127,7 +127,9 @@ if (!isset($_SESSION['manajemen']))
           <li  class="tr-tree">
             <a href="#"><i class="fa fa-graduation-cap"></i> Data Alumni<i class="pull-right fa fa-angle-right"></i></a>
             <ul class="tr-tree-menu"> 
-            <li><a href="index.php?halaman=tampil_lulusan"><i class="fa fa-table"></i> Tampil Data Alumni</a></li>
+            <li><a href="index.php?halaman=tampil_lulusan"><i class="fa fa-table"></i> Data Alumni SD</a></li>
+            <li><a href="index.php?halaman=tampil_lulusan"><i class="fa fa-table"></i> Data Alumni SMP</a></li>
+            <li><a href="index.php?halaman=tampil_lulusan"><i class="fa fa-table"></i> Data Alumni SMA</a></li>
              <li><a href="index.php?halaman=tambah_lulusan"><i class="fa fa-plus"></i> Tambah Data Alumni</a></li>
             </ul>
           </li>
@@ -259,6 +261,10 @@ if (!isset($_SESSION['manajemen']))
         {
           include 'rekapsiswa/hapus_rekapsiswasmp.php';
         }
+        elseif ($_GET['halaman']=='hapus_rekapsiswasma') 
+        {
+          include 'rekapsiswa/hapus_rekapsiswasma.php';
+        }
         elseif ($_GET['halaman']=='edit_rekapsiswasd') 
         {
           include 'rekapsiswa/edit_rekapsiswasd.php';
@@ -267,6 +273,10 @@ if (!isset($_SESSION['manajemen']))
         {
           include 'rekapsiswa/edit_rekapsiswasmp.php';
         }
+        elseif ($_GET['halaman']=='edit_rekapsiswasma') 
+        {
+          include 'rekapsiswa/edit_rekapsiswasma.php';
+        }
         elseif ($_GET['halaman']=='tambah_rekapsiswasd') 
         {
           include 'rekapsiswa/tambah_rekapsiswasd.php';
@@ -274,6 +284,10 @@ if (!isset($_SESSION['manajemen']))
         elseif ($_GET['halaman']=='tambah_rekapsiswasmp') 
         {
           include 'rekapsiswa/tambah_rekapsiswasmp.php';
+        }
+        elseif ($_GET['halaman']=='tambah_rekapsiswasma') 
+        {
+          include 'rekapsiswa/tambah_rekapsiswasma.php';
         }
 
         elseif ($_GET['halaman']=='tampil_kepegawaian') 

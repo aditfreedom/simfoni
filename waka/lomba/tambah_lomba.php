@@ -1,4 +1,4 @@
-<h3>Tambah Data lomba</h3>
+<h3>Tambah Data Prestasi</h3>
 <hr>
 
 <?php 

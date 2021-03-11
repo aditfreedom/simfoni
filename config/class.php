@@ -2334,6 +2334,29 @@ class guru
 		return $semua_data;	
 	}
 
+	function rekapsiswa_smp()
+	{
+		$semua_data = array();
+		$ambil = $this->koneksi->query("SELECT * FROM rekapsiswasmp");
+		while ($data_array = $ambil->fetch_assoc()) 
+		{
+			$semua_data[] = $data_array;
+		}
+		return $semua_data;	
+	}
+
+	function rekapsiswa_sma()
+	{
+		$semua_data = array();
+		$ambil = $this->koneksi->query("SELECT * FROM rekapsiswasma");
+		while ($data_array = $ambil->fetch_assoc()) 
+		{
+			$semua_data[] = $data_array;
+		}
+		return $semua_data;	
+	}
+
+
 	function tampil_guru_admin2()
 	{
 		$semua_data = array();
@@ -2452,6 +2475,26 @@ class guru
 		
 	}
 
+	function ambil_rekapsiswasmp($id)
+	{
+		$ambil = $this->koneksi->query("SELECT * FROM rekapsiswasmp		 
+			 
+			 WHERE id = '$id' ");
+		$data_array = $ambil->fetch_assoc();
+		return $data_array;
+		
+	}
+
+	function ambil_rekapsiswasma($id)
+	{
+		$ambil = $this->koneksi->query("SELECT * FROM rekapsiswasma
+			 
+			 WHERE id = '$id' ");
+		$data_array = $ambil->fetch_assoc();
+		return $data_array;
+		
+	}
+
 	function ambil_event($id)
 	{
 		$ambil = $this->koneksi->query("SELECT * FROM event		 
@@ -2496,6 +2539,16 @@ class guru
 		$this->koneksi->query("DELETE FROM rekapsiswasd WHERE id='$id' ");
 	}
 
+	function hapus_rekapsmp($id)
+	{
+		$this->koneksi->query("DELETE FROM rekapsiswasmp WHERE id='$id' ");
+	}
+
+	function hapus_rekapsma($id)
+	{
+		$this->koneksi->query("DELETE FROM rekapsiswasma WHERE id='$id' ");
+	}
+
 	function hapus_event($id)
 	{
 		$this->koneksi->query("DELETE FROM event WHERE id_event='$id' ");
@@ -2519,9 +2572,30 @@ class guru
 		$this->koneksi->query("INSERT INTO rekapsiswasd (tahun_ajaran, lk1, pr1, lk2, pr2, lk3, pr3, lk4, pr4, lk5, pr5, lk6, pr6 ) VALUES ('$tahun_ajaran', '$lk1', '$pr1', '$lk2', '$pr2', '$lk3', '$pr3', '$lk4', '$pr4', '$lk5', '$pr5', '$lk6', '$pr6')");
 	}
 
+	function simpan_rekapsmp($tahun_ajaran, $lk1, $pr1, $lk2, $pr2, $lk3, $pr3)
+	{
+		
+		$this->koneksi->query("INSERT INTO rekapsiswasmp (tahun_ajaran, lk1, pr1, lk2, pr2, lk3, pr3) VALUES ('$tahun_ajaran', '$lk1', '$pr1', '$lk2', '$pr2', '$lk3', '$pr3')");
+	}
+
+	function simpan_rekapsma($tahun_ajaran, $lk1, $pr1, $lk2, $pr2, $lk3, $pr3)
+	{
+		
+		$this->koneksi->query("INSERT INTO rekapsiswasma (tahun_ajaran, lk1, pr1, lk2, pr2, lk3, pr3) VALUES ('$tahun_ajaran', '$lk1', '$pr1', '$lk2', '$pr2', '$lk3', '$pr3')");
+	}
+
 	function ubah_rekapsd($tahun_ajaran, $lk1, $pr1, $lk2, $pr2, $lk3, $pr3, $lk4, $pr4, $lk5, $pr5, $lk6, $pr6, $id)
 	{
 		$this->koneksi->query("UPDATE rekapsiswasd SET tahun_ajaran='$tahun_ajaran', lk1='$lk1', pr1='$pr1', lk2='$lk2', pr2='$pr2', lk3='$lk3', pr3='$pr3', lk4='$lk4', pr4='$pr4', lk5='$lk5', pr5='$pr5', lk6='$lk6', pr6='$pr6' WHERE id='$id' ");
+	}
+
+	function ubah_rekapsmp($tahun_ajaran, $lk1, $pr1, $lk2, $pr2, $lk3, $pr3, $id)
+	{
+		$this->koneksi->query("UPDATE rekapsiswasmp SET tahun_ajaran='$tahun_ajaran', lk1='$lk1', pr1='$pr1', lk2='$lk2', pr2='$pr2', lk3='$lk3', pr3='$pr3' WHERE id='$id' ");
+	}
+	function ubah_rekapsma($tahun_ajaran, $lk1, $pr1, $lk2, $pr2, $lk3, $pr3, $id)
+	{
+		$this->koneksi->query("UPDATE rekapsiswasma SET tahun_ajaran='$tahun_ajaran', lk1='$lk1', pr1='$pr1', lk2='$lk2', pr2='$pr2', lk3='$lk3', pr3='$pr3' WHERE id='$id' ");
 	}
 
 	function simpan_event($tahun, $nama_event, $keterangan)

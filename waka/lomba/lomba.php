@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-6">
-		<h3>Data Semua Hasil Lomba Siswa</h3>
+		<h3>Data Semua Hasil Prestasi Siswa</h3>
 		<h3>Sekolah Sukma Bangsa <?php echo  ($db_lokasi)?></h3>
 	</div>
 	<div class="col-md-6">

@@ -1,4 +1,4 @@
-<h1>Tambah Data Rekap Siswa SMP</h1>
+<h1>Tambah Data Rekap Siswa SMA</h1>
 <hr>
 
 <?php 
@@ -28,7 +28,7 @@
 			<label>Tahun Ajaran</label>
 			<input type="text" name="tahun_ajaran" class="form-control" required="">
 			</div>
-			<h3><b>Kelas VII</b></h3>
+			<h3><b>Kelas X</b></h3>
 			<hr>
 			<div class="form-group">
 				<label>Jumlah Siswa Laki-Laki</label>
@@ -38,7 +38,7 @@
 				<label>Jumlah Siswa Perempuan</label>
 				<input type="number" name="pr1" class="form-control">
 			</div>
-			<h3><b>Kelas VIII</b></h3>
+			<h3><b>Kelas XI</b></h3>
 			<hr>
 			<div class="form-group">
 				<label>Jumlah Siswa Laki-Laki</label>
@@ -48,7 +48,7 @@
 				<label>Jumlah Siswa Perempuan</label>
 				<input type="number" name="pr2" class="form-control">
 			</div>
-			<h3><b>Kelas IX</b></h3>
+			<h3><b>Kelas XII</b></h3>
 			<hr>
 			<div class="form-group">
 				<label>Jumlah Siswa Laki-Laki</label>
@@ -67,9 +67,9 @@
 		<?php 
 			if (isset($_POST['simpan']))
 			{
-				$guru->simpan_rekapsmp($_POST['tahun_ajaran'], $_POST['lk1'], $_POST['pr1'], $_POST['lk2'], $_POST['pr2'], $_POST['lk3'], $_POST['pr3']);
+				$guru->simpan_rekapsma($_POST['tahun_ajaran'], $_POST['lk1'], $_POST['pr1'], $_POST['lk2'], $_POST['pr2'], $_POST['lk3'], $_POST['pr3']);
 				echo "<script>alert('data tersimpan')</script>";
-				echo "<script>location='index.php?halaman=tampil_rekapsiswa_smp'</script>";
+				echo "<script>location='index.php?halaman=tampil_rekapsiswa_sma'</script>";
 			}
 		?>
 

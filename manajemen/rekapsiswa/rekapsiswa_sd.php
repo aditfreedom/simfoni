@@ -74,24 +74,24 @@
 		<td class="text-center"><?= $value['tahun_ajaran']; ?></td>
 		<td class="text-center"><?= $value['lk1']; ?></td>
 		<td class="text-center"><?= $value['pr1']; ?></td>
-		<td class="text-center"><?= $value['lk1']+$value['pr1']; ?></td>
+		<td class="text-center"><b><?= $value['lk1']+$value['pr1']; ?></b></td>
 		<td class="text-center"><?= $value['lk2']; ?></td>
 		<td class="text-center"><?= $value['pr2']; ?></td>
-		<td class="text-center"><?= $value['lk2']+$value['pr2']; ?></td>
+		<td class="text-center"><b><?= $value['lk2']+$value['pr2']; ?></b></td>
 		<td class="text-center"><?= $value['lk3']; ?></td>
 		<td class="text-center"><?= $value['pr3']; ?></td>
-		<td class="text-center"><?= $value['lk3']+$value['pr3']; ?></td>
+		<td class="text-center"><b><?= $value['lk3']+$value['pr3']; ?></b></td>
 		<td class="text-center"><?= $value['lk4']; ?></td>
 		<td class="text-center"><?= $value['pr4']; ?></td>
-		<td class="text-center"><?= $value['lk4']+$value['pr4']; ?></td>
+		<td class="text-center"><b><?= $value['lk4']+$value['pr4']; ?></b></td>
 		<td class="text-center"><?= $value['lk5']; ?></td>
 		<td class="text-center"><?= $value['pr5']; ?></td>
-		<td class="text-center"><?= $value['lk5']+$value['pr5']; ?></td>
+		<td class="text-center"><b><?= $value['lk5']+$value['pr5']; ?></b></td>
 		<td class="text-center"><?= $value['lk6']; ?></td>
 		<td class="text-center"><?= $value['pr6']; ?></td>
-		<td class="text-center"><?= $value['lk6']+$value['pr6']; ?></td>
-		<td class="text-center"><?= $value['lk1']+$value['pr1']+$value['lk2']+$value['pr2']+$value['lk3']+$value['pr3']+$value['lk4']+$value['pr4']
-								+$value['lk5']+$value['pr5']+$value['lk6']+$value['pr6']; ?></td>
+		<td class="text-center"><b><?= $value['lk6']+$value['pr6']; ?></b></td>
+		<td class="text-center"><b><?= $value['lk1']+$value['pr1']+$value['lk2']+$value['pr2']+$value['lk3']+$value['pr3']+$value['lk4']+$value['pr4']
+								+$value['lk5']+$value['pr5']+$value['lk6']+$value['pr6']; ?></b></td>
 
 
 

@@ -5,7 +5,7 @@
 // print_r($id_user);
 // echo "</pre>";
 
-	$detail_guru = $guru->ambil_rekapsiswasmp($id_guru);
+	$detail_guru = $guru->ambil_rekapsiswasma($id_guru);
 
 
 
@@ -25,10 +25,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Edit Rekap Siswa SMP</title>
+	<title>Edit Rekap Siswa SMA</title>
 </head>
 <body>
-	<h1>Edit Rekap Siswa SMP</h1>
+	<h1>Edit Rekap Siswa SMA</h1>
 	<hr>
 	
 	<form method="POST">
@@ -79,11 +79,11 @@
 			if (isset($_POST['ubah']))
 			{
 				// obyek user mengakses fungsi ubah user berdasarkan id user dari url
-				 $guru->ubah_rekapsmp($_POST['tahun_ajaran'], $_POST['lk1'], $_POST['pr1'], $_POST['lk2'], $_POST['pr2'], $_POST['lk3'], $_POST['pr3'],
+				 $guru->ubah_rekapsma($_POST['tahun_ajaran'], $_POST['lk1'], $_POST['pr1'], $_POST['lk2'], $_POST['pr2'], $_POST['lk3'], $_POST['pr3'],
 				 $_GET['id']);
 
 				echo "<script>alert('Data berhasil diubah');</script>";
-				echo "<script>location='index.php?halaman=tampil_rekapsiswa_smp';</script>";
+				echo "<script>location='index.php?halaman=tampil_rekapsiswa_sma';</script>";
 			  
 			  	
 			} 

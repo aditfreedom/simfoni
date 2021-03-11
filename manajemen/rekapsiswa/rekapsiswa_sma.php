@@ -1,10 +1,10 @@
 <div class="row">
 	<div class="col-md-6">
-		<h1>DATA REKAP SISWA <br> SMP SUKMA BANGSA BIREUEN</h1>
+		<h1>DATA REKAP SISWA <br> SMA SUKMA BANGSA BIREUEN</h1>
 	</div>
 	<div class="col-md-6">
 		<div class="tambah-user">
-		<a href="index.php?halaman=tambah_rekapsiswasmp" class="btn btn-primary">Tambah</a>
+		<a href="index.php?halaman=tambah_rekapsiswasma" class="btn btn-primary">Tambah</a>
 			
 		</div>
 	</div>
@@ -18,7 +18,7 @@
 	// tampil_user adalah fungsi pada class user dari class.php
 	// objek user menjalankan fungsi tampil user
 
-	$data_guru = $guru->rekapsiswa_smp();
+	$data_guru = $guru->rekapsiswa_sma();
 	$data_jenjang = $jenjang->tampil_jenjang_admin();
 
 // 	echo "<pre>";
@@ -38,9 +38,9 @@
 		</tr>
 		
 		<tr>
-		<th colspan="3" class="text-center">VII</th>
-		<th colspan="3" class="text-center">VIII</th>
-		<th colspan="3" class="text-center">IX</th>
+		<th colspan="3" class="text-center">X</th>
+		<th colspan="3" class="text-center">XI</th>
+		<th colspan="3" class="text-center">XII</th>
 
 		</tr>
 
@@ -76,8 +76,8 @@
 
 			
 			<td>
-				<a href="index.php?halaman=edit_rekapsiswasmp&id=<?php echo $value['id'] ?>" class="btn btn-warning">Edit</a>
-				<a href="index.php?halaman=hapus_rekapsiswasmp&id=<?php echo $value['id']; ?>" class="btn btn-danger" onclick="return confirm('hapus data?')">Hapus</a>
+				<a href="index.php?halaman=edit_rekapsiswasma&id=<?php echo $value['id'] ?>" class="btn btn-warning">Edit</a>
+				<a href="index.php?halaman=hapus_rekapsiswasma&id=<?php echo $value['id']; ?>" class="btn btn-danger" onclick="return confirm('hapus data?')">Hapus</a>
 			</td>
 		</tr>
 		<?php endforeach ?>
