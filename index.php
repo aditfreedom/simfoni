@@ -22,9 +22,9 @@ window.location.href = "http://www.detik.com"
 <br>
 <br>
 <div class="container">
-<h2 align="left">SISTEM INFORMASI MANAJEMEN FORM ONLINE</h2>
+<h2 align="left">SISTEM INFORMASI<br>MANAJEMEN FORM ONLINE</h2>
 <h2 align="left">SEKOLAH SUKMA BANGSA  <?php echo strtoupper ($db_lokasi)?>	</h2>
-<hr class="bg-danger" style="border-width:5px;width: 400px;margin-left:0px;">
+<hr class="bg-white" style="border-width:5px;width: 400px;margin-left:0px;border-radius:5px;">
 
 <div class="kotak_login float-left">
 	<img src="logo.png" class="gambar" align="middle">
