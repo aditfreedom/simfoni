@@ -91,7 +91,7 @@ $semua_mapel = $mapel->tampil_mapel();
 			<td class="hidden-print"><?php echo $value['laporan'] ?> <br> <br>
 			<!--	<a href="index.php?halaman=upload_laporan_visit&id_visit=<?php // echo $value['id_visit']; ?>" class="" >Upload Laporan</a> <br>	-->
 
-				<a href="../laporan/school_visit/<?php echo $value['laporan'] ?>" class="" >Download Laporan</a>	
+				<a href="../laporan/school_visit/<?php echo $value['laporan'] ?>" class="btn btn-success" >Download Laporan</a>	
 			</td>
 
 			<!-- <td class="hidden-print"><?php //echo $value['proposal'] ?> <br>

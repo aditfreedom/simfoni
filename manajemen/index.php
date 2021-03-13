@@ -142,10 +142,25 @@ if (!isset($_SESSION['manajemen']))
               <li><a href="index.php?halaman=tambah_visit"><i class="fa fa-plus"></i> Tambah Data School Visit</a></li>
               <li><a href="index.php?halaman=tambah_visit_home"><i class="fa fa-plus"></i> Tambah Data Home Visit</a></li>
               <li><a href="index.php?halaman=tambah_lomba"><i class="fa fa-plus"></i> Tambah Data Lomba Dan Prestasi</a></li>
+              <li><a href="index.php?halaman=tambah_lainnya"><i class="fa fa-plus"></i> Tambah Data Kegiatan Lainnya</a></li>
             </ul>
           </li>
 
-           <li  class="tr-tree">
+          <li  class="tr-tree">
+            <a href="#"><i class="fa fa-table">
+            </i> Tampil Semua Data Kegiatan <i class="pull-right fa fa-angle-right"></i></a>
+            <ul class="tr-tree-menu"> 
+              <li><a href="index.php?halaman=tampil_class_project">
+                <i class="fa fa-circle"></i> Tampil Data Class Project</a></li>
+             <li><a href="index.php?halaman=tampil_guest"><i class="fa fa-circle"></i> Tampil Data Guest Teacher</a></li>
+              <li><a href="index.php?halaman=tampil_visit"><i class="fa fa-circle"></i> Tampil Data School Visit</a>
+              </li> <li><a href="index.php?halaman=tampil_visit_home"><i class="fa fa-circle"></i> Tampil Data Home Visit</a></li>
+              </li> <li><a href="index.php?halaman=tampil_lainnya"><i class="fa fa-circle"></i> Tampil Kegiatan Lainnya</a></li>
+
+           </ul>
+          </li>
+
+           <!-- <li  class="tr-tree">
             <a href="#"><i class="fa fa-list"></i> Data Kegiatan SD <i class="pull-right fa fa-angle-right"></i></a>
             <ul class="tr-tree-menu"> 
              <li><a href="index.php?halaman=cek_tampil_periode_class_project_sd"><i class="fa fa-circle"></i> Class Project</a></li>
@@ -189,7 +204,7 @@ if (!isset($_SESSION['manajemen']))
                  <li><a href="index.php?halaman=cek_tampil_pustaka_sma"><i class="fa fa-circle"></i> Perpustakaan</a></li> 
               <li><a href="index.php?halaman=cek_tampil_periode_visit_sma"><i class="fa fa-circle"></i> School Visit</a></li>
             </ul>
-          </li>
+          </li> -->
 
           <li><a href="index.php?halaman=download"><i class="fa fa-download"></i> Download Template</a></li>
           <li><a href="../template/Panduan Aplikasi Simfoni.pdf"><i class="fa fa-info-circle"></i> Panduan Aplikasi</a></li>
@@ -233,6 +248,18 @@ if (!isset($_SESSION['manajemen']))
         elseif ($_GET['halaman']=='edit_event') 
         {
           include 'event/edit_event.php';
+        }
+        elseif ($_GET['halaman']=='tampil_lainnya') 
+        {
+          include 'lainnya/tampil_lainnya.php';
+        }
+        elseif ($_GET['halaman']=='simpan_lainya') 
+        {
+          include 'lainnya/simpan_lainnya.php';
+        }
+        elseif ($_GET['halaman']=='tambah_lainnya') 
+        {
+          include 'lainnya/tambah_lainnya.php';
         }
         elseif ($_GET['halaman']=='tambah_event') 
         {

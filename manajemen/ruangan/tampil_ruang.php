@@ -75,6 +75,16 @@ $data_guru = $guru->tampil_guru_pjruangan();
 				
 			<tbody>
 				<?php foreach ($semua_peminjaman as $key => $value): ?>
+					<?php
+			if($value['nama_status_final']=="Disetujui"){
+				$class="btn-success";
+			}elseif($value['nama_status_final']=="Dibatalkan"){
+				$class="btn-danger";
+			}
+			else{
+				$class="";
+			}
+			?>
 			
 		<tr>
 			<td><?php echo $key+1; ?></td>
@@ -85,7 +95,7 @@ $data_guru = $guru->tampil_guru_pjruangan();
 			<td> <?php echo ($value['jam']) ?></td>
 			<td><?php echo $value['keperluan']; ?></td> 
 			<td><?php echo $value['nama_status']; ?></td> 
-			<td><?php echo $value['nama_status_final']; ?></td> 
+			<td><a class="btn <?=$class?>"><?php echo $value['nama_status_final']; ?></a></td> 
 			<td><?php echo $value['keterangan']; ?></td> 
 			
 		

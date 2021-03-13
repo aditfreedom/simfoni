@@ -69,7 +69,7 @@ $semua_visit_home = $visit_home->tampil_visit_home_admin();
 			<td><?php echo $value['nama_guru']; ?>  </td>
 			<td><?php echo tanggal_indo($value['waktu_1']) ?></td>
 			<td><?php echo $value['id_siswa']; ?> ( <br>
-				<?php echo $value['id_kelas']; ?> )
+				<?php echo $value['nama_kelas']; ?> )
 			</td>
 			
 			<td><?php echo $value['ortu']; ?>

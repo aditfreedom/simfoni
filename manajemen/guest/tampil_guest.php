@@ -90,7 +90,7 @@ $semua_mapel1 = $mapel1->tampil_mapel1_admin();
 			<td><?php echo $value['biaya_guest'] ?></td>
 			<td class="hidden-print"><?php echo $value['laporan'] ?> <br> <br>
 				<!-- <a href="index.php?halaman=upload_laporan_guest&id_guest=<?php // echo $value['id_guest']; ?>" class="" >Upload Laporan</a> <br> -->
-				<a href="../laporan/guest_teacher/<?php echo $value['laporan'] ?>" class="" >Download Laporan</a>	
+				<a href="../laporan/guest_teacher/<?php echo $value['laporan'] ?>" class="btn btn-success" >Download Laporan</a>	
 				<br>	
 
 			</td>

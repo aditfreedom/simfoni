@@ -19,7 +19,7 @@
 // $semua_jenjang = $jenjang->tampil_jenjang();
 
 
-$semua_peminjaman = $peminjaman->tampil_peminjaman_admin();
+$semua_peminjaman = $peminjaman->tampil_peminjaman_admin3();
 $data_guru = $guru->tampil_guru();
 	$data_jenjang = $jenjang->tampil_jenjang();
 	$data_ruang = $ruang->tampil_ruang();
@@ -84,6 +84,16 @@ $data_guru = $guru->tampil_guru();
 				
 			<tbody>
 				<?php foreach ($semua_peminjaman as $key => $value): ?>
+					<?php
+			if($value['nama_status_final']=="Disetujui"){
+				$class="btn-success";
+			}elseif($value['nama_status_final']=="Dibatalkan"){
+				$class="btn-danger";
+			}
+			else{
+				$class="";
+			}
+			?>
 			
 		<tr>
 			<td><?php echo $key+1; ?></td>
@@ -94,7 +104,7 @@ $data_guru = $guru->tampil_guru();
 			<td> <?php echo ($value['jam']) ?></td>
 			<td><?php echo $value['keperluan']; ?></td> 
 			<td><?php echo $value['nama_status']; ?></td> 
-			<td><?php echo $value['nama_status_final']; ?></td> 
+			<td><a class="btn <?=$class;?>"><?php echo $value['nama_status_final']; ?></a></td> 
 			<td><?php echo $value['keterangan']; ?></td> 
 			
 			

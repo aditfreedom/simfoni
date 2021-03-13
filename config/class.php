@@ -522,6 +522,11 @@ class project
 	$this->koneksi->query("INSERT INTO project (id_jenjang, id_semester, id_kelas, id_kelas2, id_kelas3, id_kelas4, id_guru, tema_project, waktu_1, waktu_2, id_mapel1, id_mapel2, id_mapel3, id_mapel4, hasil_project, biaya_project) VALUES ('$id_jenjang', '$id_semester', '$id_kelas', '$id_kelas2', '$id_kelas3', '$id_kelas4', '$id_guru', '$tema_project', '$waktu_1', '$waktu_2', '$id_mapel1', '$id_mapel2', '$id_mapel3', '$id_mapel4', '$hasil_project', '$biaya_project') ");
 	}
 
+	function simpan_lainnya($jenjang, $semester, $kelas, $jenis_kegiatan, $nama_kegiatan, $nama_guru, $waktu_1, $waktu_2, $hasil_kegiatan, $biaya_kegiatan, $nama)
+	{ 
+	$this->koneksi->query("INSERT INTO lainnya (jenjang,semester,kelas,jenis_kegiatan,nama_kegiatan,nama_guru,waktu_1,waktu_2,hasil_kegiatan,biaya_kegiatan,laporan) VALUES ('$jenjang', '$semester', '$kelas', '$jenis_kegiatan', '$nama_kegiatan', '$nama_guru', '$waktu_1', '$waktu_2', '$hasil_kegiatan', '$biaya_kegiatan', '$nama') ");
+	}
+
 	function tampil_project()
 	{
 		$semua_data = array();
@@ -594,7 +599,22 @@ class project
 		 	LEFT JOIN jenjang ON project.id_jenjang = jenjang.id_jenjang
 		 	LEFT JOIN guru ON project.id_guru = guru.id_guru
 		 	LEFT JOIN semester ON project.id_semester = semester.id_semester
-		 	ORDER BY project.id_jenjang, project.id_semester, project.waktu_1
+		 	ORDER BY id_project DESC
+		 	");
+		while ($data_array = $ambil->fetch_assoc()) 
+		{
+			$semua_data[] = $data_array;
+		}
+		return $semua_data;
+	}	
+
+	function tampil_lainnya()
+	{
+		$semua_data = array();
+		
+		
+		 $ambil = $this->koneksi->query("SELECT * FROM lainnya
+		 	ORDER BY id desc;
 		 	");
 		while ($data_array = $ambil->fetch_assoc()) 
 		{
@@ -1084,7 +1104,7 @@ class guest
 		 	LEFT JOIN kelas4 ON guest.id_kelas4 = kelas4.id_kelas4
 		 	LEFT JOIN jenjang ON guest.id_jenjang = jenjang.id_jenjang
 		 	LEFT JOIN guru ON guest.id_guru = guru.id_guru
-		 	LEFT JOIN semester ON guest.id_semester = semester.id_semester ORDER BY guest.id_jenjang, guest.id_semester, guest.waktu_1 
+		 	LEFT JOIN semester ON guest.id_semester = semester.id_semester ORDER BY id_guest DESC
 		 	");
 		while ($data_array = $ambil->fetch_assoc()) 
 		{
@@ -1459,7 +1479,7 @@ class guest
 		 	LEFT JOIN guru ON visit.id_guru = guru.id_guru	 
 		 	LEFT JOIN semester ON visit.id_semester = semester.id_semester	 
 
-		 	ORDER BY visit.id_jenjang, visit.id_semester, visit.waktu_1
+		 	ORDER BY id_visit DESC
 		 	
 		 	");
 		while ($data_array = $ambil->fetch_assoc()) 
@@ -1697,7 +1717,7 @@ class visit_home
 		 	LEFT JOIN jenjang ON visit_home.id_jenjang = jenjang.id_jenjang
 		 	LEFT JOIN guru ON visit_home.id_guru = guru.id_guru	 
 		 	LEFT JOIN semester ON visit_home.id_semester = semester.id_semester	 
-		 	ORDER BY visit_home.id_semester, visit_home.waktu_1
+		 	ORDER BY id_visit_home DESC
 
 		 	
 		 	

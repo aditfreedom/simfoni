@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Mar 2021 pada 09.02
--- Versi server: 10.4.17-MariaDB
--- Versi PHP: 7.4.14
+-- Waktu pembuatan: 13 Mar 2021 pada 06.38
+-- Versi server: 10.4.14-MariaDB
+-- Versi PHP: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -434,7 +434,8 @@ INSERT INTO `guru` (`id_guru`, `id_jenjang`, `nama_guru`, `nip_guru`, `status_gu
 (164, '2', 'Yunda Nafsiah, S.Pd', '10181020', 'OJT'),
 (165, '2', 'Firdaus Adiannur, S.Pd', '10206048', 'SDK HONORER'),
 (166, '2', 'Destya Darsiana, S.Sos', '10206053', 'SDK HONORER'),
-(167, '2', 'Herlina Sari, S.Si', '10081089#', 'SDK');
+(167, '2', 'Herlina Sari, S.Si', '10081089#', 'SDK'),
+(168, '1', 'Aditya Aziz Fikhri, S.Tr.Kom', '10186018', 'SDK HONORER');
 
 -- --------------------------------------------------------
 
@@ -1008,6 +1009,27 @@ CREATE TABLE `konselor` (
 
 INSERT INTO `konselor` (`id_konselor`, `nama_konselor`, `nip_konselor`, `username_konselor`, `password_konselor`) VALUES
 (1, 'konselor', 'konselor', 'konselor', '1c1861bcfa010bce718bf4bf46d64f84');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `lainnya`
+--
+
+CREATE TABLE `lainnya` (
+  `id` int(11) NOT NULL,
+  `jenjang` varchar(255) NOT NULL,
+  `semester` varchar(255) NOT NULL,
+  `kelas` varchar(255) NOT NULL,
+  `jenis_kegiatan` varchar(255) NOT NULL,
+  `nama_kegiatan` varchar(255) NOT NULL,
+  `nama_guru` varchar(255) NOT NULL,
+  `waktu_1` date NOT NULL,
+  `waktu_2` date NOT NULL,
+  `hasil_kegiatan` varchar(500) NOT NULL,
+  `biaya_kegiatan` varchar(50) NOT NULL,
+  `laporan` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -2430,7 +2452,8 @@ INSERT INTO `pengguna` (`id_pengguna`, `id_jenjang`, `id_guru`, `username_penggu
 (106, '2', '165', '10206048', 'edfb24c0d903ce36acced5e7891193db'),
 (107, '2', '166', '10206053', 'a828e1eca5b1d070a10599b5ebe11a5c'),
 (108, '2', '167', '10081089#', '38c0933c6fd52fd214e7161f93e95f9f'),
-(109, '3', '137', '10206052', '26dde37f819c789e6804a8b9e02ccfe1');
+(109, '3', '137', '10206052', '26dde37f819c789e6804a8b9e02ccfe1'),
+(110, '1', '168', '10186018', 'bc375f11307eac440f9f5f36e5e15404');
 
 -- --------------------------------------------------------
 
@@ -4200,6 +4223,12 @@ ALTER TABLE `konselor`
   ADD PRIMARY KEY (`id_konselor`);
 
 --
+-- Indeks untuk tabel `lainnya`
+--
+ALTER TABLE `lainnya`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `level`
 --
 ALTER TABLE `level`
@@ -4417,7 +4446,7 @@ ALTER TABLE `guest`
 -- AUTO_INCREMENT untuk tabel `guru`
 --
 ALTER TABLE `guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=168;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=169;
 
 --
 -- AUTO_INCREMENT untuk tabel `hari`
@@ -4490,6 +4519,12 @@ ALTER TABLE `kepegawaian`
 --
 ALTER TABLE `konselor`
   MODIFY `id_konselor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `lainnya`
+--
+ALTER TABLE `lainnya`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `level`
@@ -4567,7 +4602,7 @@ ALTER TABLE `peminjaman`
 -- AUTO_INCREMENT untuk tabel `pengguna`
 --
 ALTER TABLE `pengguna`
-  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 
 --
 -- AUTO_INCREMENT untuk tabel `pjruangan`
