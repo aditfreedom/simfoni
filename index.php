@@ -13,7 +13,11 @@ window.location.href = "http://www.detik.com"
 	<link rel="stylesheet" type="text/css" href="assets/css/login_admin.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
-	
+	<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
 </head>
 <script src="https://kit.fontawesome.com/2d7830743a.js" crossorigin="anonymous"></script>
 
@@ -22,11 +26,11 @@ window.location.href = "http://www.detik.com"
 <br>
 <br>
 <div class="container">
-<h2 align="left">SISTEM INFORMASI<br>MANAJEMEN FORM ONLINE</h2>
-<h2 align="left">SEKOLAH SUKMA BANGSA  <?php echo strtoupper ($db_lokasi)?>	</h2>
-<hr class="bg-white" style="border-width:5px;width: 400px;margin-left:0px;border-radius:5px;">
+<h2 class="animate__animated animate__slideInLeft" align="left">SISTEM INFORMASI<br>MANAJEMEN FORM ONLINE</h2>
+<h2 class="animate__animated animate__slideInLeft" align="left">SEKOLAH SUKMA BANGSA  <?php echo strtoupper ($db_lokasi)?>	</h2>
+<hr class="bg-white animate__animated animate__slideInLeft" style="border-width:5px;width: 400px;margin-left:0px;border-radius:5px;">
 
-<div class="kotak_login float-left">
+<div class="kotak_login float-left animate__animated animate__slideInRight">
 	<img src="logo.png" class="gambar" align="middle">
 	<p class="tulisan_login">Silakan Login</p>
 	<br/>

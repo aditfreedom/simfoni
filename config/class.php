@@ -3924,7 +3924,7 @@ class mitra
 		 	LEFT JOIN jenjang ON mitra.id_jenjang = jenjang.id_jenjang 	
 		 	
 
-		 	ORDER BY  mitra.id_mitra
+		 	ORDER BY  id_mitra DESC
 		 	
 		 	");
 		while ($data_array = $ambil->fetch_assoc()) 
