@@ -64,20 +64,22 @@ $semua_mapel4 = $mapel4->tampil_mapel4_admin();
 				
 				$nama = $_FILES['file_up']['name'];
 				$lokasi = $_FILES['file_up']['tmp_name'];
+				$extension = pathinfo($nama, PATHINFO_EXTENSION);
+				$nama2       = md5($nama).'.'.$extension;
 
 				if (!empty($lokasi))
 				{
 
-				move_uploaded_file($lokasi, "../laporan/supervisi/$nama");
+				move_uploaded_file($lokasi, "../laporan/supervisi/$nama2");
 				$database = new mysqli("localhost", "root", "kebersamaan", "simfoni");
-				$database->query("UPDATE supervisi SET laporan='$nama' WHERE id_supervisi='$id_supervisi'");
+				$database->query("UPDATE supervisi SET laporan='$nama2' WHERE id_supervisi='$id_supervisi'");
 				print_r($database);
 
 				}
 				else
 				{
 					$database = new mysqli("localhost", "root", "kebersamaan", "simfoni");
-					$database->query("UPDATE supervisi SET laporan='$nama' WHERE id_supervisi='$id_supervisi'");
+					$database->query("UPDATE supervisi SET laporan='$nama2' WHERE id_supervisi='$id_supervisi'");
 					// print_r($database);
 				}
 

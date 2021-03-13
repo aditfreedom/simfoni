@@ -1736,7 +1736,7 @@ class visit_home
 		 $ambil = $this->koneksi->query("SELECT * FROM supervisi		 	
 		 	LEFT JOIN jenjang ON supervisi.id_jenjang = jenjang.id_jenjang
 		 	LEFT JOIN semester ON supervisi.id_semester = semester.id_semester	 
-		 	ORDER BY id_supervisi ASC;
+		 	ORDER BY waktu DESC;
 
 		 	
 		 	
@@ -2547,6 +2547,12 @@ class guru
 	function hapus_guru($id_guru)
 	{
 		$this->koneksi->query("DELETE FROM guru WHERE id_guru='$id_guru' ");
+	}
+
+	
+	function hapus_lainnya($id)
+	{
+		$this->koneksi->query("DELETE FROM lainnya WHERE id='$id' ");
 	}
 
 	function hapus_kepegawaian($id)
@@ -5706,6 +5712,7 @@ class lomba
 			LEFT JOIN tp on lomba.id_tp = tp.id_tp
 			LEFT JOIN jk on lomba.id_jk = jk.id_jk
 			LEFT JOIN jenjang on lomba.id_jenjang = jenjang.id_jenjang
+			ORDER BY id_lomba DESC
 			");
 		while ($data_array = $ambil->fetch_assoc()) 
 		{

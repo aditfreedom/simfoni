@@ -117,10 +117,12 @@
 			{
 				$nama = $_FILES['laporan']['name'];
 				$lokasi = $_FILES['laporan']['tmp_name'];
-				move_uploaded_file($lokasi, "../laporan/lainnya/$nama");
+				$extension = pathinfo($nama, PATHINFO_EXTENSION);
+				$nama2       = md5($nama).'.'.$extension;
+				move_uploaded_file($lokasi, "../laporan/lainnya/$nama2");
 
 
-				$project->simpan_lainnya($_POST['jenjang'], $_POST['semester'], $_POST['kelas'], $_POST['jenis_kegiatan'], $_POST['nama_kegiatan'],  $_POST['nama_guru'], $_POST['waktu_1'], $_POST['waktu_2'], $_POST['hasil_kegiatan'], $_POST['biaya_kegiatan'], $nama);
+				$project->simpan_lainnya($_POST['jenjang'], $_POST['semester'], $_POST['kelas'], $_POST['jenis_kegiatan'], $_POST['nama_kegiatan'],  $_POST['nama_guru'], $_POST['waktu_1'], $_POST['waktu_2'], $_POST['hasil_kegiatan'], $_POST['biaya_kegiatan'], $nama2);
 
 
 

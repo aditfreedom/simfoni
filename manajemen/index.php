@@ -156,6 +156,8 @@ if (!isset($_SESSION['manajemen']))
               <li><a href="index.php?halaman=tampil_visit"><i class="fa fa-circle"></i> Tampil Data School Visit</a>
               </li> <li><a href="index.php?halaman=tampil_visit_home"><i class="fa fa-circle"></i> Tampil Data Home Visit</a></li>
               </li> <li><a href="index.php?halaman=tampil_lainnya"><i class="fa fa-circle"></i> Tampil Kegiatan Lainnya</a></li>
+              <li><a href="index.php?halaman=lomba"><i class="fa fa-circle"></i> Tampil Data Prestasi</a></li>
+
 
            </ul>
           </li>
@@ -244,6 +246,10 @@ if (!isset($_SESSION['manajemen']))
         elseif ($_GET['halaman']=='hapus_event') 
         {
           include 'event/hapus_event.php';
+        }
+        elseif ($_GET['halaman']=='hapus_lainnya') 
+        {
+          include 'lainnya/hapus_lainnya.php';
         }
         elseif ($_GET['halaman']=='edit_event') 
         {

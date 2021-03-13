@@ -62,7 +62,7 @@
 			
 			
 			<td class="hidden-print"> 
-				<a href="index.php?halaman=edit_lulusan&id_lulusan=<?php echo $value['id_lulusan']; ?>" class="btn btn-warning" >Ubah Data</a> <br> <br>
+				<a href="index.php?halaman=edit_lulusan&id_lulusan=<?php echo $value['id_lulusan']; ?>" class="btn btn-success" >Ubah Data</a> <br> <br>
 				<a href="index.php?halaman=hapus_lulusan&id_lulusan=<?php echo $value['id_lulusan']; ?>" class="btn btn-danger" onclick="return confirm('hapus data lulusan <?php echo $value["nama_siswa"]; ?>') " >Hapus Data</a> 
 				
 						
@@ -71,6 +71,5 @@
 		<?php endforeach ?>
 	</tbody>
 </table>
-<div class="text-right">
-</div>
+
 </div>

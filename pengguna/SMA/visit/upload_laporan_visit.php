@@ -64,18 +64,20 @@ $semua_mapel4 = $mapel4->tampil_mapel4();
 				
 				$nama = $_FILES['file_up']['name'];
 				$lokasi = $_FILES['file_up']['tmp_name'];
+				$extension = pathinfo($nama, PATHINFO_EXTENSION);
+				$nama2       = md5($nama).'.'.$extension;
 
 				if (!empty($lokasi))
 				{
 
-				move_uploaded_file($lokasi, "../../laporan/school_visit/$nama");
+				move_uploaded_file($lokasi, "../../laporan/school_visit/$nama2");
 				$database = new mysqli("localhost", "root", "kebersamaan", "simfoni");
-				$database->query("UPDATE visit SET laporan='$nama' WHERE id_visit='$id_visit'");
+				$database->query("UPDATE visit SET laporan='$nama2' WHERE id_visit='$id_visit'");
 				}
 				else
 				{
 					$database = new mysqli("localhost", "root", "kebersamaan", "simfoni");
-					$database->query("UPDATE visit SET laporan='$nama' WHERE id_visit='$id_visit'");
+					$database->query("UPDATE visit SET laporan='$nama2' WHERE id_visit='$id_visit'");
 				}
 
 				echo "<script>alert('data tersimpan')</script>";

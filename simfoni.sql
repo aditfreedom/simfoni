@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Mar 2021 pada 06.38
--- Versi server: 10.4.14-MariaDB
--- Versi PHP: 7.2.34
+-- Waktu pembuatan: 13 Mar 2021 pada 12.33
+-- Versi server: 10.4.17-MariaDB
+-- Versi PHP: 7.4.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -179,7 +179,7 @@ INSERT INTO `guest` (`id_guest`, `id_jenjang`, `id_semester`, `id_kelas`, `id_ke
 (54, '1', '2', '17', '', '', '', '39', '36', 'Bangun Ruang', 'Muthmainnah', '1. Siswa mampu memahami bentuk-bentuk bangun ruang dengan baik, 2. Siswa mengetahui penerapan dari materi yang dipelajari dalam kehidupan sehari-hari', '2019-02-04', '2019-02-04', '90.000', 'Laporan Guest Teacher Matematika Kelas V (smt 2).doc', ''),
 (55, '1', '2', '13', '', '', '', '35', '50', 'Pramuka', 'Yusrizal', 'Diharapkan setelah siswa mendapat pembelajaran dari guru tamu, siswa dapat mengenal kegiatan kepramukaan.', '2019-04-18', '2019-04-18', '90000', 'LAPORAN-GUEST-TEACHER-NURLAILI (PRAMUKA).docx', ''),
 (56, '1', '2', '17', '', '', '', '42', '40', 'membuat boneka dari kaos kaki', 'Fitri', 'Mengetahui teknik yang benar dalam menjahit dan ïƒ˜	Menambah  pengalaman siswa dalam membuat karya seni kerajinan tangan', '2019-02-05', '2019-02-05', '83.000', 'LAPORAN GUEST TEACHER SBK KLS 5.docx', ''),
-(57, '3', '2', '2', '', '', '', '29', '65', 'mitigasi dan adaptasi bencana alam', 'Dikky Setiadi, S.Pd', 'ïƒ˜	Siswa mampu menerapkan dan mengaplikasikan sikap antisipatif dalam mengahadapi bencana alam', '2019-04-24', '2019-04-24', '86000', 'LAPORAN GUEST TEACHER GEO YUNDA.docx', ''),
+(57, '3', '2', '2', '', '', '', '29', '65', 'mitigasi dan adaptasi bencana alam', 'Dikky Setiadi, S.Pd', 'ïƒ˜	Siswa mampu menerapkan dan mengaplikasikan sikap antisipatif dalam mengahadapi bencana alam', '2019-04-24', '2019-04-24', '86000', '410f91f6e6c1a703aeb624874543945d.docx', ''),
 (58, '2', '1', '24', '25', '', '', '8', '70', 'Penerapan Nilai-nilai Pancasila dalam Kehidupan Bermasyarakat, Berbangsa dan Bernegara', 'Muhammad Fuadi, S.Sos', 'ïƒ˜	Siswa mampu menerapkan nilai-nilai pancasila dalam kehidupan bermasyarakat, berbangsa dan bernegara', '2018-11-06', '2018-11-21', '100.000', '', ''),
 (59, '1', '2', '10', '', '', '', '39', '19', 'Praktik jual beli menggunakan mata uang rupiah', 'Saifannur', 'agar siswa dapat lebih memahami cara menggunakan uang dan dapat mempraktikkannya ke dalam kehidupan sehari-hari', '2019-04-15', '2019-04-15', '79000', 'V_20190415_083550.mp4', ''),
 (60, '3', '2', '3', '4', '', '', '14', '43', 'bermain drama', 'Dewi Karwina, S.Pd.', 'mementaskan drama', '2019-04-13', '2019-04-13', '100.000,00', 'laporan guest teacher bahasa indonesia 1.docx', ''),
@@ -2532,7 +2532,7 @@ INSERT INTO `project` (`id_project`, `id_jenjang`, `id_semester`, `id_kelas`, `i
 (22, '3', '2', '3', '4', '', '', '25', 'Membuat peta dan mencari tokoh', '2019-02-26', '2019-03-01', '12', '', '', '', 'Peta masa pemerintahan Bani Umayyah dan Bani Abbasiyah serta tokoh ilmuwan Islam pada masa kejayaan Islam', '20', '', ''),
 (23, '2', '1', '22', '', '', '', '69', 'Invitation Card', '2018-10-29', '2018-10-29', '', '', '', '', 'ïƒ˜	Kartu Undangan', '0', 'Laporan Class Project SMP.docx', ''),
 (24, '1', '1', '14', '', '', '', '57', 'Pembuatan Hiasan Dinding dari kain flanel', '2019-03-23', '2019-03-23', '35', '33', '42', '', 'Hiasan Dinding', '200.000', 'laporan kelas projek agama membuat hiasan dinding dari kain flanel.docx', ''),
-(25, '3', '2', '2', '', '', '', '65', 'Replika gunung api dan prosese erupsi', '2019-02-27', '2019-03-13', '29', '', '', '', 'Replika tiga jenis gunung api', '154000', 'LAPORAN KEGIATAN CLASS PROJECT X IPS GENAP.docx', ''),
+(25, '3', '2', '2', '', '', '', '65', 'Replika gunung api dan prosese erupsi', '2019-02-27', '2019-03-13', '29', '', '', '', 'Replika tiga jenis gunung api', '154000', 'f7d109167762685f43502f45b876962e.docx', ''),
 (26, '1', '2', '14', '15', '', '', '40', 'Pahlawan satra Indonesia', '2019-02-14', '2019-02-21', '42', '35', '', '', 'karya', '-', 'Laporan Class Project Membuat bingkai dari cangkang telur yang berisikan puisi..docx', ''),
 (27, '1', '2', '16', '17', '', '', '8', 'Iklan', '2019-03-10', '2019-04-10', '41', '35', '', '', 'Video Iklan', '0', 'Laporan Class Project Iklan.docx', ''),
 (29, '3', '2', '1', '', '', '', '26', 'Mengukur ketinggian benda menggunakan klinometer', '2019-05-08', '2019-05-09', '15', '', '', '', 'klinometer', '50000', 'LAPORAN KEGIATAN CLASS PROJECT klinometer.docx', ''),
@@ -4440,7 +4440,7 @@ ALTER TABLE `event`
 -- AUTO_INCREMENT untuk tabel `guest`
 --
 ALTER TABLE `guest`
-  MODIFY `id_guest` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
+  MODIFY `id_guest` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
 
 --
 -- AUTO_INCREMENT untuk tabel `guru`
@@ -4524,7 +4524,7 @@ ALTER TABLE `konselor`
 -- AUTO_INCREMENT untuk tabel `lainnya`
 --
 ALTER TABLE `lainnya`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `level`

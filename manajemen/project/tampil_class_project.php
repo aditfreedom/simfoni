@@ -76,6 +76,13 @@ $semua_mapel = $mapel->tampil_mapel();
 				
 			<tbody>
 				<?php foreach ($semua_project as $key => $value): ?>
+				<?php
+				$laporan = $value['laporan'];
+				if($laporan == ""){
+					$laporan="Belum Upload Laporan";
+				}
+
+				?>
 			
 		<tr>
 			<td><?php echo $key+1; ?></td>
@@ -88,11 +95,11 @@ $semua_mapel = $mapel->tampil_mapel();
 			<td><?php echo tanggal_indo($value['waktu_1']) ?> s/d <?php echo tanggal_indo($value['waktu_2']) ?></td>
 			<td><?php echo $value['hasil_project'] ?></td>
 			<td><?php echo $value['biaya_project'] ?></td>
-			<td class="hidden-print"><?php echo $value['laporan'] ?>  <br> <br>
+			<td class="hidden-print"><b><?php echo $laporan ?></b><br> <br>
 			<!--	<a href="index.php?halaman=upload_laporan_class_project&id_project=<?php // echo $value['id_project']; ?>" class="" >Upload Laporan</a> 	<br>  -->
 
 
-				<a href="../laporan/class_project/<?php echo $value['laporan'] ?>" class="btn btn-success" >Download Laporan</a> <br>
+				<a href="../laporan/class_project/<?php echo $laporan ?>" class="btn btn-success" >Download Laporan</a> <br>
 				
 			</td>
 			<!-- <td class="hidden-print"><?php //echo $value['proposal'] ?>  <br>

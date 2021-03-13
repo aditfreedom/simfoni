@@ -93,6 +93,8 @@ $semua_mapel = $mapel->tampil_mapel();
 
 
 				<a href="../laporan/lainnya/<?php echo $value['laporan'] ?>" class="btn btn-success" >Download Laporan</a> <br>
+				<br><a href="index.php?halaman=hapus_lainnya&id=<?php echo $value['id']; ?>" class="btn btn-danger">Hapus Data</a>  <br>
+
 				
 			</td>
 			<!-- <td class="hidden-print"><?php //echo $value['proposal'] ?>  <br>

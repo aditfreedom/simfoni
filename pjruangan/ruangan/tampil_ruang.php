@@ -53,7 +53,7 @@ $data_guru = $guru->tampil_guru_pjruangan();
 <div class="row">
 	<div class="col-md-12">
 	
-		<table class="table table-bordered" id="data-table">
+		<table class="table table-stripped" id="data-table">
 			
 			<thead>
 				<tr>
@@ -103,7 +103,7 @@ $data_guru = $guru->tampil_guru_pjruangan();
 			
 			<td class="hidden-print">
 
-				<a href="index.php?halaman=edit_ruang&id_peminjaman=<?php echo $value['id_peminjaman']; ?>" class="btn btn-warning">Ubah Data</a> <br> 
+				<a href="index.php?halaman=edit_ruang&id_peminjaman=<?php echo $value['id_peminjaman']; ?>" class="btn btn-warning">Ubah Data</a> <br> <br>
 				<a href="index.php?halaman=hapus_ruang&id_peminjaman=<?php echo $value['id_peminjaman']; ?>" class="btn btn-danger" onclick="return confirm('hapus pengajuan pemakaian dari <?php echo $value["nama_guru"]; ?>') " >Hapus Data</a> <br>
 				
 				

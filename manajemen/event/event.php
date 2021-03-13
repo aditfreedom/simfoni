@@ -47,7 +47,7 @@
 			
 			
 			<td>
-				<a href="index.php?halaman=edit_event&id=<?php echo $value['id_event'] ?>" class="btn btn-warning">Edit</a>
+				<a href="index.php?halaman=edit_event&id=<?php echo $value['id_event'] ?>" class="btn btn-success">Edit</a><br><br>
 				<a href="index.php?halaman=hapus_event&id=<?php echo $value['id_event']; ?>" class="btn btn-danger" onclick="return confirm('hapus data <?php echo $value["nama_guru"]; ?> ?')">Hapus</a>
 			</td>
 		</tr>

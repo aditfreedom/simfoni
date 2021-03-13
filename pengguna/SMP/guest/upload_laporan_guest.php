@@ -63,18 +63,20 @@ $semua_mapel4 = $mapel4->tampil_mapel4_admin();
 				
 				$nama = $_FILES['file_up']['name'];
 				$lokasi = $_FILES['file_up']['tmp_name'];
+				$extension = pathinfo($nama, PATHINFO_EXTENSION);
+				$nama2       = md5($nama).'.'.$extension;
 
 				if (!empty($lokasi))
 				{
 
-				move_uploaded_file($lokasi, "../../laporan/guest_teacher/$nama");
+				move_uploaded_file($lokasi, "../../laporan/guest_teacher/$nama2");
 				$database = new mysqli("localhost", "root", "kebersamaan", "simfoni");
-				$database->query("UPDATE guest SET laporan='$nama' WHERE id_guest='$id_guest'");
+				$database->query("UPDATE guest SET laporan='$nama2' WHERE id_guest='$id_guest'");
 				}
 				else
 				{
 					$database = new mysqli("localhost", "root", "kebersamaan", "simfoni");
-					$database->query("UPDATE guest SET laporan='$nama' WHERE id_guest='$id_guest'");
+					$database->query("UPDATE guest SET laporan='$nama2' WHERE id_guest='$id_guest'");
 				}
 
 				echo "<script>alert('data tersimpan')</script>";

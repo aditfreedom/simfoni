@@ -19,15 +19,14 @@ window.location.href = "http://www.detik.com"
 
 <body>
 </body>
-<br/>
-<br/>
-<p></p>
-<p></p>
-<h2 align="center">SIMFONI</h2>
-<h2 align="center">SISTEM INFORMASI MANAJEMEN FORM ONLINE</h2>
-<h2 align="center">SEKOLAH SUKMA BANGSA <?php echo strtoupper ($db_lokasi)?>	</h2>
+<br>
+<br>
+<div class="container">
+<h2 align="left">SISTEM INFORMASI MANAJEMEN FORM ONLINE</h2>
+<h2 align="left">SEKOLAH SUKMA BANGSA  <?php echo strtoupper ($db_lokasi)?>	</h2>
+<hr class="bg-danger" style="border-width:5px;width: 400px;margin-left:0px;">
 
-<div class="kotak_login">
+<div class="kotak_login float-left">
 	<img src="logo.png" class="gambar" align="middle">
 	<p class="tulisan_login">Silakan Login</p>
 	<br/>
@@ -46,6 +45,7 @@ window.location.href = "http://www.detik.com"
                 <input type="password" class="form-control" placeholder="Password" name="password" required>
             </div>
 			<input type="submit" class="btn btn-info font-weight-bold" style="width:100%;" value="LOGIN" name="login">
+
 		</div>
 	</form>
 </div>
@@ -116,6 +116,9 @@ window.location.href = "http://www.detik.com"
 
 	
 </div>
+</div>
+
+</main>
 
 </body>
 </html>

@@ -67,14 +67,14 @@ $semua_mapel4 = $mapel4->tampil_mapel4_admin();
 				if (!empty($lokasi))
 				{
 
-				move_uploaded_file($lokasi, "../laporan/guest_teacher/$nama");
+				move_uploaded_file($lokasi, "../laporan/guest_teacher/$nama2");
 				$database = new mysqli("localhost", "root", "kebersamaan", "simfoni");
-				$database->query("UPDATE guest SET laporan='$nama' WHERE id_guest='$id_guest'");
+				$database->query("UPDATE guest SET laporan='$nama2' WHERE id_guest='$id_guest'");
 				}
 				else
 				{
 					$database = new mysqli("localhost", "root", "kebersamaan", "simfoni");
-					$database->query("UPDATE guest SET laporan='$nama' WHERE id_guest='$id_guest'");
+					$database->query("UPDATE guest SET laporan='$nama2' WHERE id_guest='$id_guest'");
 				}
 
 				echo "<script>alert('data tersimpan')</script>";

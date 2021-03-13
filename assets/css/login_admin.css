@@ -14,7 +14,7 @@ h2{
 	font-family: modern;
 	margin: 3px;
 	font-size: 30px;
-	text-align: center;
+	text-align: left;
 	font-weight: bold;
 }
 
@@ -27,7 +27,7 @@ h2{
 
 .kotak_login{
 	width: 340px;
-	height:350px;
+	height:380px;
 	background: white;
 	margin: 30px auto;
 	padding: 20px 20px;

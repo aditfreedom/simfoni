@@ -3,12 +3,12 @@
 		<h3>Data Home Visit</h3>
 		<h3>Sekolah Sukma Bangsa <?php echo ($db_lokasi)?></h3>
 	</div>
-	<!-- <div class="col-md-6">
+	<div class="col-md-6">
 		<div class="tambah-user hidden-print">
 		<a href="index.php?halaman=tambah_visit_home" class="btn btn-primary">Tambah Data Home Visit</a>
 			
 		</div>
-	</div> -->
+	</div>
 
 
 </div>
@@ -36,12 +36,8 @@ $semua_visit_home = $visit_home->tampil_visit_home_admin();
 	
 <!-- <form action="upload_laporan_visit.php" method="POST" enctype="multipart/form-data">	 -->
 
-<div class="row">
-	<div class="col-md-12">
-	
-		<table class="table table-bordered" id="data-table">
-			
-			<table class="table table-bordered" id="data-table">
+<div class="row">			
+			<table class="table table-stripped" id="data-table">
 			
 			<thead>
 				<tr>
@@ -54,6 +50,8 @@ $semua_visit_home = $visit_home->tampil_visit_home_admin();
 					<th>Tujuan Kunjungan</th>
 					<th>Hasil Wawancara & Observasi</th>
 					<th>Tindak Lanjut Kunjungan</th>	
+					<th>Laporan</th>	
+
 				<!--	<th class="hidden-print">Opsi</th> -->
 					
 					
@@ -62,6 +60,14 @@ $semua_visit_home = $visit_home->tampil_visit_home_admin();
 				
 			<tbody>
 				<?php foreach ($semua_visit_home as $key => $value): ?>
+								
+					<?php
+				$laporan = $value['laporan'];
+				if($laporan == ""){
+					$laporan="Belum Upload Laporan";
+				}
+
+				?>
 			
 		<tr>
 			<td><?php echo $key+1; ?></td>
@@ -76,7 +82,12 @@ $semua_visit_home = $visit_home->tampil_visit_home_admin();
 			</td>			
 			<td><?php echo $value['tujuan_visit_home']; ?></td>
 			<td><?php echo $value['hasil_visit_home']; ?></td>
-			<td><?php echo $value['lanjutan_visit_home']; ?></td>			
+			<td><?php echo $value['lanjutan_visit_home']; ?></td>	
+			<td class="hidden-print"><b><?php echo $laporan ?></b><br> <br>
+			<!--	<a href="index.php?halaman=upload_laporan_visit&id_visit=<?php // echo $value['id_visit']; ?>" class="" >Upload Laporan</a> <br>	-->
+
+				<a href="../laporan/school_visit/<?php echo $laporan ?>" class="btn btn-success" >Download Laporan</a>	
+			</td>	
 			
 			<!-- <td>
 				<input type="file" name="upload_file"> <br>
@@ -90,7 +101,6 @@ $semua_visit_home = $visit_home->tampil_visit_home_admin();
 			</tbody>
 		</table>
 			<div class="text-right">
-</div>
 </div>
 		
 	

@@ -3,12 +3,12 @@
 		<h3>Data School Visit</h3>
 		<h3>Sekolah Sukma Bangsa <?php echo ($db_lokasi)?></h3>
 	</div>
-	<!-- <div class="col-md-6">
+	<div class="col-md-6">
 		<div class="tambah-user hidden-print">
 		<a href="index.php?halaman=tambah_visit" class="btn btn-primary">Tambah Data School Visit</a>
 			
 		</div>
-	</div> -->
+	</div>
 
 
 </div>
@@ -51,9 +51,8 @@ $semua_mapel = $mapel->tampil_mapel();
 <!-- <form action="upload_laporan_visit.php" method="POST" enctype="multipart/form-data">	 -->
 
 <div class="row">
-	<div class="col-md-12">
 	
-		<table class="table table-bordered" id="data-table">
+		<table class="table table-stripped" id="data-table">
 			
 			<thead>
 				<tr>
@@ -76,6 +75,14 @@ $semua_mapel = $mapel->tampil_mapel();
 				
 			<tbody>
 				<?php foreach ($semua_visit as $key => $value): ?>
+				
+					<?php
+				$laporan = $value['laporan'];
+				if($laporan == ""){
+					$laporan="Belum Upload Laporan";
+				}
+
+				?>
 			
 		<tr>
 			<td><?php echo $key+1; ?></td>
@@ -88,10 +95,10 @@ $semua_mapel = $mapel->tampil_mapel();
 			
 			<td><?php echo tanggal_indo($value['waktu_1']) ?> s/d <?php echo tanggal_indo($value['waktu_2']) ?></td>
 			<td><?php echo $value['biaya_visit'] ?></td>
-			<td class="hidden-print"><?php echo $value['laporan'] ?> <br> <br>
+			<td class="hidden-print"><b><?php echo $laporan ?></b><br> <br>
 			<!--	<a href="index.php?halaman=upload_laporan_visit&id_visit=<?php // echo $value['id_visit']; ?>" class="" >Upload Laporan</a> <br>	-->
 
-				<a href="../laporan/school_visit/<?php echo $value['laporan'] ?>" class="btn btn-success" >Download Laporan</a>	
+				<a href="../laporan/school_visit/<?php echo $laporan ?>" class="btn btn-success" >Download Laporan</a>	
 			</td>
 
 			<!-- <td class="hidden-print"><?php //echo $value['proposal'] ?> <br>
@@ -114,7 +121,6 @@ $semua_mapel = $mapel->tampil_mapel();
 		</table>
 			<div class="text-right">
 <a href="" onclick="print()" class="btn btn-success hidden-print"><i class="fa fa-print"></i> Cetak</a>
-</div>
 </div>
 		
 	

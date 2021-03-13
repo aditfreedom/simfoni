@@ -3,12 +3,12 @@
 		<h3>Data Guest Teacher</h3>
 		<h3>Sekolah Sukma Bangsa <?php echo ($db_lokasi)?></h3>
 	</div>
-	<!-- <div class="col-md-6">
+	<div class="col-md-6">
 		<div class="tambah-user hidden-print">
 		<a href="index.php?halaman=tambah_guest" class="btn btn-primary">Tambah Data Guest Teacher</a>
 			
 		</div>
-	</div> -->
+	</div>
 
 
 </div>
@@ -77,6 +77,13 @@ $semua_mapel1 = $mapel1->tampil_mapel1_admin();
 				
 			<tbody>
 				<?php foreach ($semua_guest as $key => $value): ?>
+					<?php
+				$laporan = $value['laporan'];
+				if($laporan == ""){
+					$laporan="Belum Upload Laporan";
+				}
+
+				?>
 			
 		<tr>
 			<td><?php echo $key+1; ?></td>
@@ -88,9 +95,9 @@ $semua_mapel1 = $mapel1->tampil_mapel1_admin();
 			<td><?php echo $value['hasil_guest'] ?></td>
 			<td><?php echo tanggal_indo($value['waktu_1']) ?> s/d <?php echo tanggal_indo($value['waktu_2']) ?></td>
 			<td><?php echo $value['biaya_guest'] ?></td>
-			<td class="hidden-print"><?php echo $value['laporan'] ?> <br> <br>
+			<td class="hidden-print"><b><?php echo $laporan ?></b><br> <br>
 				<!-- <a href="index.php?halaman=upload_laporan_guest&id_guest=<?php // echo $value['id_guest']; ?>" class="" >Upload Laporan</a> <br> -->
-				<a href="../laporan/guest_teacher/<?php echo $value['laporan'] ?>" class="btn btn-success" >Download Laporan</a>	
+				<a href="../laporan/guest_teacher/<?php echo $laporan ?>" class="btn btn-success" >Download Laporan</a>	
 				<br>	
 
 			</td>

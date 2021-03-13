@@ -60,7 +60,13 @@ $semua_visit_home = $visit_home->tampil_supervisi();
 				
 			<tbody>
 				<?php foreach ($semua_visit_home as $key => $value): ?>
-			
+					<?php
+				$laporan = $value['laporan'];
+				if($laporan == ""){
+					$laporan="Belum Upload Laporan";
+				}
+
+				?>
 		<tr>
 			<td><?php echo $key+1; ?></td>
 			<td><?php echo $value['nama_jenjang']; ?> <br></td>
@@ -73,11 +79,11 @@ $semua_visit_home = $visit_home->tampil_supervisi();
 				<?php echo $value['kriteria']; ?> )
 			</td>
 			<td>
-			<?php echo $value['laporan'] ?> <br> <br>
+			<b><?php echo $laporan ?></b> <br> <br>
 			<!-- <?php //echo $value['proposal'] ?> <br> -->
 				<a href="index.php?halaman=upload_supervisi&id_supervisi=<?php echo $value['id_supervisi']; ?>" class="btn btn-primary" >Upload File</a> <br>
 				<!-- <a href="index.php?halaman=upload_proposal_visit_home&id_visit_home=<?php //echo $value['id_visit_home']; ?>" class="" >Upload Proposal</a> <br>	 -->
-				<a href="../laporan/supervisi/<?php echo $value['laporan'] ?>" class="btn btn-success" >Download File</a>	 <br>
+				<a href="../laporan/supervisi/<?php echo $laporan ?>" class="btn btn-success" >Download File</a>	 <br>
 
 					
 
