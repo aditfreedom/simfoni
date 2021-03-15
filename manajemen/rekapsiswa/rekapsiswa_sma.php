@@ -25,8 +25,14 @@
 // print_r($data_pengguna);
 // echo "</pre>";
 ?>
+<div class="" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
 <div id="grafik"></div>
+</div>
+<hr>
 
+<div class="container" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);width:100%;">
+<h3 class="text-center"><b>Rekap Jumlah Total Siswa SMA</h3>
+<h3 class="text-center">Sekolah Sukma Bangsa Bireuen</b></h3>
 <!-- melihat isi array data user -->
 <!-- <pre><?php //print_r($data_user); ?></pre>  -->
 
@@ -86,7 +92,7 @@
 	</tbody>
 </table>
 <h4 style="color:red;font-weight:bold;">*Dihitung per 1 Januari</h4>
-
+</div>
 <?php
 $tp = [];
 $total = [];

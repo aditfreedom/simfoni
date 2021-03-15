@@ -27,6 +27,7 @@ if (!isset($_SESSION['manajemen']))
     <title>SIMFONI</title>
     <link rel="icon" href="../ssb.png" type="image/png">
     <!-- Bootstrap -->
+    
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../assets/font-awesome-4.7.0/css/font-awesome.css">
