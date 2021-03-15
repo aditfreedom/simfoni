@@ -1056,5 +1056,6 @@ if (!isset($_SESSION['manajemen']))
       CKEDITOR.replace("theeditor");
     </script>
     <script src="../assets/js/sendiri.js"></script>
+    
   </body>
 </html>

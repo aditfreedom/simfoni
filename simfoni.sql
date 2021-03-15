@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Mar 2021 pada 12.33
--- Versi server: 10.4.17-MariaDB
--- Versi PHP: 7.4.14
+-- Waktu pembuatan: 15 Mar 2021 pada 06.43
+-- Versi server: 10.4.14-MariaDB
+-- Versi PHP: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -480,29 +480,28 @@ CREATE TABLE `jadwal` (
 --
 
 INSERT INTO `jadwal` (`id_jadwal`, `id_jenjang`, `id_hari`, `id_jam`, `id_ruang`, `keperluan`) VALUES
-(56, '2', '1', '08.40 - 09.50', '2', 'TIK SMP'),
-(57, '1', '1', '10.00 - 11.10', '2', 'TIK SD'),
-(58, '2', '1', '11.20 - 12.30', '2', 'TIK SMP'),
-(59, '3', '1', '15.10 - 16.20', '2', 'EKSTRAKULIKULER WAJIB SMA'),
-(60, '2', '2', '07.30 - 08.40', '2', 'TIK SMP'),
-(61, '1', '2', '09.00 - 10.10', '2', 'TIK SD'),
-(62, '1', '2', '10.20 - 11.30', '2', 'TIK SD'),
-(63, '3', '2', '14.00 - 15.10', '2', 'EKSTRAKULIKULER WAJIB SMA'),
-(64, '1', '3', '07.40 - 08.50', '2', 'TIK SD'),
-(65, '1', '3', '09.00 - 10.10', '2', 'TIK SD'),
-(66, '1', '3', '10.20 - 11.30', '2', 'TIK SD'),
-(67, '3', '3', '14.00 - 15.10', '2', 'EKSTRAKULIKULER WAJIB SMA'),
-(68, '2', '4', '08.40 - 09.50', '2', 'TIK SMP'),
-(69, '1', '4', '10.00 - 11.10', '2', 'TIK SD'),
-(70, '2', '4', '11.20 - 12.30', '2', 'TIK SMP'),
-(71, '1', '4', '14.00 - 15.10', '2', 'TIK SD'),
-(72, '2', '5', '07.30 - 08.40', '2', 'TIK SMP'),
-(73, '1', '5', '08.50 - 10.00', '2', 'TIK SD'),
-(74, '3', '5', '09.50 - 11.20', '2', 'KELAS VOKASIONAL SMA'),
-(75, '3', '1', '14.00-16.00', '1', 'B.Inggris '),
-(76, '3', '2', '14.00-16.00', '1', 'B.Inggris '),
-(77, '3', '3', '14.00-16.00', '1', 'English Class '),
-(78, '3', '2', '14.00-15.30 WIB', '8', 'KBM');
+(205, '2', '1', '07.30-08.30', '2', 'TIK VII HARUN AR-RASYID'),
+(206, '2', '1', '09.00-10.00', '2', 'TIK VIII AL-GHAFIQY'),
+(207, '1', '1', '10.15-11.25', '2', 'TIK VI-A'),
+(208, '2', '1', '12.00-13.00', '2', 'TIK VIII ABRAHAM MASLOW'),
+(209, '3', '1', '14.00-16.00', '2', 'EXTRA CLASS X SMA'),
+(210, '2', '2', '07.30-08.30', '2', 'TIK VII AL-GHAFIQY'),
+(211, '1', '2', '09.45-10.55', '2', 'TIK IV-B'),
+(212, '2', '2', '11.00-12.00', '2', 'TIK VIII ABRAHAM MASLOW'),
+(213, '2', '2', '12.00-13.00', '2', 'TIK VII AL-BIRUNI'),
+(214, '3', '2', '14.00-16.00', '2', 'EXTRA CLASS XI SMA'),
+(215, '2', '3', '07.30-08.30', '2', 'TIK VII HARUN AR-RASYID'),
+(216, '2', '3', '08.30-09.30', '2', 'TIK IX ADAM OSBORNE'),
+(217, '1', '3', '10.20-11.30', '2', 'TIK V-B'),
+(218, '2', '3', '12.00-13.00', '2', 'TIK IX HAMKA'),
+(219, '2', '4', '07.30-08.30', '2', 'TIK VII AL-BIRUNI'),
+(220, '2', '4', '09.00-10.00', '2', 'TIK IX HAMKA'),
+(221, '1', '4', '10.15-11.25', '2', 'TIK V-A'),
+(222, '2', '4', '12.00-13.00', '2', 'TIK IX ADAM OSBORNE'),
+(223, '1', '5', '07.30-08.40', '2', 'TIK VI-A'),
+(224, '1', '5', '09.15-10.25', '2', 'TIK VI-B'),
+(225, '3', '5', '10.30-12.00', '2', 'VOCATIONAL CLASS XII'),
+(226, '3', '6', '10.00-12.00', '2', 'VOCATIONAL CLASS XII');
 
 -- --------------------------------------------------------
 
@@ -2694,7 +2693,20 @@ CREATE TABLE `rekapsiswasd` (
 --
 
 INSERT INTO `rekapsiswasd` (`id`, `tahun_ajaran`, `lk1`, `pr1`, `lk2`, `pr2`, `lk3`, `pr3`, `lk4`, `pr4`, `lk5`, `pr5`, `lk6`, `pr6`) VALUES
-(2, '2006/2007', 15, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+(4, '2006/2007', 15, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(5, '2007/2008', 18, 11, 15, 15, 0, 0, 0, 0, 0, 0, 0, 0),
+(6, '2008/2009', 19, 11, 18, 11, 15, 15, 0, 0, 0, 0, 0, 0),
+(7, '2009/2010', 14, 15, 18, 10, 24, 10, 9, 14, 0, 0, 0, 0),
+(8, '2010/2011', 16, 14, 15, 15, 19, 10, 23, 14, 8, 15, 0, 0),
+(9, '2011/2012', 25, 28, 15, 13, 16, 14, 18, 11, 22, 14, 8, 15),
+(10, '2012/2013', 26, 26, 29, 28, 17, 13, 17, 12, 19, 11, 22, 14),
+(11, '2013/2014', 28, 28, 27, 27, 30, 28, 17, 14, 17, 14, 19, 11),
+(12, '2014/2015', 35, 19, 26, 30, 28, 27, 27, 28, 17, 14, 16, 13),
+(13, '2015/2016', 26, 23, 35, 19, 25, 26, 28, 25, 27, 28, 17, 14),
+(14, '2016-2017', 26, 28, 27, 23, 33, 19, 27, 26, 25, 24, 26, 29),
+(15, '2017/2018', 41, 15, 30, 28, 29, 27, 37, 19, 29, 27, 26, 24),
+(16, '2018/2019', 31, 27, 41, 15, 31, 29, 29, 29, 37, 18, 29, 26),
+(17, '2019/2020', 32, 24, 30, 27, 42, 16, 30, 29, 29, 29, 37, 18);
 
 -- --------------------------------------------------------
 
@@ -2713,13 +2725,6 @@ CREATE TABLE `rekapsiswasma` (
   `pr3` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `rekapsiswasma`
---
-
-INSERT INTO `rekapsiswasma` (`id`, `tahun_ajaran`, `lk1`, `pr1`, `lk2`, `pr2`, `lk3`, `pr3`) VALUES
-(2, '2006/2007', 30, 31, 0, 0, 0, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -2736,13 +2741,6 @@ CREATE TABLE `rekapsiswasmp` (
   `lk3` int(5) NOT NULL,
   `pr3` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `rekapsiswasmp`
---
-
-INSERT INTO `rekapsiswasmp` (`id`, `tahun_ajaran`, `lk1`, `pr1`, `lk2`, `pr2`, `lk3`, `pr3`) VALUES
-(2, '2006/2007', 24, 24, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -4458,7 +4456,7 @@ ALTER TABLE `hari`
 -- AUTO_INCREMENT untuk tabel `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
 
 --
 -- AUTO_INCREMENT untuk tabel `jenjang`
@@ -4626,7 +4624,7 @@ ALTER TABLE `pustaka`
 -- AUTO_INCREMENT untuk tabel `rekapsiswasd`
 --
 ALTER TABLE `rekapsiswasd`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT untuk tabel `rekapsiswasma`

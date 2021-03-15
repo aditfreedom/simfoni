@@ -25,6 +25,8 @@
 // print_r($data_pengguna);
 // echo "</pre>";
 ?>
+<div id="grafik"></div>
+
 <!-- melihat isi array data user -->
 <!-- <pre><?php //print_r($data_user); ?></pre>  -->
 
@@ -84,3 +86,72 @@
 	</tbody>
 </table>
 <h4 style="color:red;font-weight:bold;">*Dihitung per 1 Januari</h4>
+
+<?php
+$tp = [];
+$total = [];
+foreach ($data_guru as $key => $value){
+	$tp[]= $value['tahun_ajaran'];
+	$total[]=$value['lk1']+$value['pr1']+$value['lk2']+$value['pr2']+$value['lk3']+$value['pr3'];
+
+}
+
+?>
+
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script>
+Highcharts.chart('grafik', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'GRAFIK REKAP SISWA SMA SUKMA BANGSA BIREUEN'
+    },
+    subtitle: {
+        text: 'Per 1 Januari'
+    },
+    xAxis: {
+        categories: 
+			
+			<?php echo json_encode($tp); ?>
+
+		 ,
+        crosshair: true,
+		title: {
+            text: 'Tahun Pelajaran'
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Jumlah Siswa'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.0f} Siswa</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0,
+            borderWidth: 0
+        }
+    },
+    series: [{
+		name: 'Jumlah Siswa',
+        data: 
+			<?php echo json_encode($total); ?>
+    }]
+
+});
+var chart = $('grafik').highcharts();
+  setTimeout(function() {
+    chart.exportChart();
+  }, 2000);
+</script>
