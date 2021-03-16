@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Mar 2021 pada 06.43
+-- Waktu pembuatan: 16 Mar 2021 pada 02.58
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.2.34
 
@@ -2725,6 +2725,13 @@ CREATE TABLE `rekapsiswasma` (
   `pr3` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `rekapsiswasma`
+--
+
+INSERT INTO `rekapsiswasma` (`id`, `tahun_ajaran`, `lk1`, `pr1`, `lk2`, `pr2`, `lk3`, `pr3`) VALUES
+(3, '2006/2007', 15, 15, 0, 0, 0, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -2741,6 +2748,13 @@ CREATE TABLE `rekapsiswasmp` (
   `lk3` int(5) NOT NULL,
   `pr3` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `rekapsiswasmp`
+--
+
+INSERT INTO `rekapsiswasmp` (`id`, `tahun_ajaran`, `lk1`, `pr1`, `lk2`, `pr2`, `lk3`, `pr3`) VALUES
+(3, '2006/2007', 15, 15, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -4630,13 +4644,13 @@ ALTER TABLE `rekapsiswasd`
 -- AUTO_INCREMENT untuk tabel `rekapsiswasma`
 --
 ALTER TABLE `rekapsiswasma`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `rekapsiswasmp`
 --
 ALTER TABLE `rekapsiswasmp`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `ruang`
