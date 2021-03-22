@@ -29,7 +29,11 @@
 <!-- melihat isi array data user -->
 <!-- <pre><?php //print_r($data_user); ?></pre>  -->
 <div class="" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-<div id="grafik"></div>
+
+<!-- tampil grafik
+<div id="grafik"></div> -->
+
+
 </div>
 <hr>
 
@@ -129,7 +133,7 @@ foreach ($data_guru as $key => $value){
 ?>
 
 
-<script src="https://code.highcharts.com/highcharts.js"></script>
+<!-- <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script>
 Highcharts.chart('grafik', {
@@ -184,5 +188,5 @@ var chart = $('grafik').highcharts();
   setTimeout(function() {
     chart.exportChart();
   }, 2000);
-</script>
+</script> -->
 
