@@ -94,8 +94,8 @@
 
 
 			<div class="form-group">
-				<label>Hasil Kegiatan</label>
-				<input type="text" name="hasil_kegiatan" class="form-control" required="" placeholder="Hasil akhir apakah dalam bentuk produk, laporan, ataupun karya">
+				<label>Deskripsi</label>
+				<input type="text" name="hasil_kegiatan" class="form-control" required="" placeholder="Deskripsi kegiatan" maxlength="490">
 			</div>
 
 			<div class="form-group">

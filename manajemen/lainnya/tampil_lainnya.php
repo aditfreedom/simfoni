@@ -5,7 +5,7 @@
 	</div>
 	<div class="col-md-6">
 		<div class="tambah-user hidden-print">
-		<a href="index.php?halaman=tambah_lainnya" class="btn btn-primary">Tambah Data Class Project</a>
+		<a href="index.php?halaman=tambah_lainnya" class="btn btn-primary">Tambah Data Kegiatan Lainnya</a>
 			
 		</div>
 	</div>
@@ -60,12 +60,12 @@ $semua_mapel = $mapel->tampil_mapel();
 				<tr>
 					<th>No</th>
 					<th>Jenjang & Semester</th>
-					<th>Kelas</th>
+					<th>Peserta</th>
 					<th>Jenis Kegiatan</th>
 					<th>Nama Kegiatan</th>
 					<th>Koordinator Pelaksana</th>	
 					<th>Waktu Pelaksanaan</th>				
-					<th>Hasil Kegiatan</th>
+					<th>Deskripsi</th>
 					<th>Biaya (Rp)</th>
 					<th class="hidden-print">Laporan</th>
 					<!-- <th class="hidden-print">Proposal</th> -->
