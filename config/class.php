@@ -614,8 +614,26 @@ class project
 		
 		
 		 $ambil = $this->koneksi->query("SELECT * FROM lainnya
+		 		 	LEFT JOIN guru ON lainnya.nama_guru = guru.id_guru
+
 		 	ORDER BY id desc;
 		 	");
+		while ($data_array = $ambil->fetch_assoc()) 
+		{
+			$semua_data[] = $data_array;
+		}
+		return $semua_data;
+	}	
+
+	function tampil_lainnya_only()
+	{
+		$semua_data = array();
+		$id_jenjang = $_SESSION['pengguna']['id_guru'];
+		
+		 $ambil = $this->koneksi->query("SELECT * FROM lainnya
+		 	LEFT JOIN guru ON lainnya.nama_guru = guru.id_guru
+		 	
+		 	WHERE lainnya.nama_guru = $id_jenjang ORDER BY semester DESC ");
 		while ($data_array = $ambil->fetch_assoc()) 
 		{
 			$semua_data[] = $data_array;

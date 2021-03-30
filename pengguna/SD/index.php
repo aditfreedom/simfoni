@@ -66,6 +66,7 @@ if (!isset($_SESSION['pengguna']) OR $_SESSION['pengguna']['nama_jenjang'] !== "
              <li><a href="index.php?halaman=tambah_class_project"><i class="fa fa-circle"></i> Class Project</a></li>
              <li><a href="index.php?halaman=tambah_guest"><i class="fa fa-circle"></i> Data Guest Teacher</a></li>
               <li><a href="index.php?halaman=tambah_visit"><i class="fa fa-circle"></i> Data School Visit</a></li>
+              <li><a href="index.php?halaman=tambah_lainnya"><i class="fa fa-circle"></i> Tambah Data Kegiatan Lainnya</a></li>
 
             </ul>
           </li>
@@ -80,6 +81,8 @@ if (!isset($_SESSION['pengguna']) OR $_SESSION['pengguna']['nama_jenjang'] !== "
               <li><a href="index.php?halaman=tampil_class_project"><i class="fa fa-circle"></i> Class Project</a></li>
              <li><a href="index.php?halaman=tampil_guest"><i class="fa fa-circle"></i> Guest Teacher</a></li>
               <li><a href="index.php?halaman=tampil_visit"><i class="fa fa-circle"></i> School Visit</a>
+              </li> <li><a href="index.php?halaman=tampil_lainnya"><i class="fa fa-circle"></i> Tampil Kegiatan Lainnya</a></li>
+
               </li>     
 
            </ul>
@@ -124,6 +127,24 @@ if (!isset($_SESSION['pengguna']) OR $_SESSION['pengguna']['nama_jenjang'] !== "
         {
           include 'home/home.php';
         }
+        elseif ($_GET['halaman']=='hapus_lainnya') 
+        {
+          include 'lainnya/hapus_lainnya.php';
+        }
+        elseif ($_GET['halaman']=='tampil_lainnya') 
+        {
+          include 'lainnya/tampil_lainnya.php';
+        }
+        elseif ($_GET['halaman']=='simpan_lainya') 
+        {
+          include 'lainnya/simpan_lainnya.php';
+        }
+        elseif ($_GET['halaman']=='tambah_lainnya') 
+        {
+          include 'lainnya/tambah_lainnya.php';
+        }
+
+
         elseif ($_GET['halaman']=='tambah_guest') 
         {
           include 'guest/tambah_guest.php';
