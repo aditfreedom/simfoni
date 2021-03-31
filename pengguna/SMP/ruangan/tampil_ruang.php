@@ -6,7 +6,10 @@
 	<div class="col-md-6">
 		<div class="tambah-user hidden-print">
 			<a href="index.php?halaman=tampil_jadwal" class="btn btn-primary">Lihat Jadwal Tetap Penggunaan Ruang</a>
-		<a href="index.php?halaman=tambah_ruang" class="btn btn-primary">Tambah Data Pemakaian Ruangan</a>
+			<a href="#" class="btn btn-danger" onclick="window.open('index.php?halaman=tampil_jadwal_window', 
+                         'newwindow', 
+                         'width=750,height=500');">Jadwal Yang Telah Diajukan</a>
+		<a href="index.php?halaman=tambah_ruang" class="btn btn-success">Tambah Data Pemakaian Ruangan</a>
 			
 		</div>
 	</div>

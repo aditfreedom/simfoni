@@ -11,6 +11,7 @@ if (!isset($_SESSION['pengguna']) OR $_SESSION['pengguna']['nama_jenjang'] !== "
   exit();
 }
 
+$data_guru = $guru->tampil_guru();
 
 ?>
 
@@ -51,8 +52,8 @@ if (!isset($_SESSION['pengguna']) OR $_SESSION['pengguna']['nama_jenjang'] !== "
     <nav class="navbar-default navbar-side hidden-print">
       <div class="sidebar-collapse"> 
       <div class="user">
-      <img src="../../assets/img/user.png" width="40px" class="img-circle">
-        <h3>Halo, SDK SD!</h3>
+      <img src="../../assets/img/user.png" width="40px" class="img-circle">		
+        <h3>SDK DEPARTEMEN SD</h3>
         <p></p>
       </div>
         <ul class="nav" id="main-menu">
@@ -309,6 +310,10 @@ if (!isset($_SESSION['pengguna']) OR $_SESSION['pengguna']['nama_jenjang'] !== "
         {
           include 'ruangan/tampil_jadwal.php';
         }
+        elseif ($_GET['halaman']=='tampil_jadwal_window') 
+        {
+          include 'ruangan/tampil_ruang_window.php';
+        }
 
 
         
@@ -355,6 +360,7 @@ if (!isset($_SESSION['pengguna']) OR $_SESSION['pengguna']['nama_jenjang'] !== "
     } 
           );
       } );
+      </script>
 
     <script src="../../assets/ckeditor/ckeditor.js"></script>
     <script>

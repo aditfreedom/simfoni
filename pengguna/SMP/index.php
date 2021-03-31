@@ -10,6 +10,7 @@ if (!isset($_SESSION['pengguna']) OR $_SESSION['pengguna']['nama_jenjang'] !== "
   echo "<script>location='../../index.php'</script>";
   exit();
 }
+$data_guru = $guru->tampil_guru();
 
 
 ?>
@@ -52,7 +53,7 @@ if (!isset($_SESSION['pengguna']) OR $_SESSION['pengguna']['nama_jenjang'] !== "
       <div class="sidebar-collapse"> 
       <div class="user">
       <img src="../../assets/img/user.png" width="40px" class="img-circle">
-        <h3>Halo, SDK SMP!</h3>
+      <h3>SDK DEPARTEMEN SMP</h3>
         <p></p>
       </div>
         <ul class="nav" id="main-menu">
@@ -309,6 +310,10 @@ if (!isset($_SESSION['pengguna']) OR $_SESSION['pengguna']['nama_jenjang'] !== "
            elseif ($_GET['halaman']=='tampil_jadwal') 
         {
           include 'ruangan/tampil_jadwal.php';
+        }
+        elseif ($_GET['halaman']=='tampil_jadwal_window') 
+        {
+          include 'ruangan/tampil_ruang_window.php';
         }
 
 

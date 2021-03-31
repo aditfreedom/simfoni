@@ -3,27 +3,19 @@
 		<h3>Data Pemakaian Ruangan</h3>
 		<h3>Sekolah Sukma Bangsa <?php echo  ($db_lokasi)?></h3>
 	</div>
-	<div class="col-md-6">
-		<div class="tambah-user hidden-print">
-		<a href="index.php?halaman=tampil_jadwal" class="btn btn-primary">Lihat Jadwal Tetap Penggunaan Ruang</a>
-			<a href="#" class="btn btn-danger" onclick="window.open('index.php?halaman=tampil_jadwal_window', 
-                         'newwindow', 
-                         'width=750,height=500');">Jadwal Yang Telah Diajukan</a>
-		<a href="index.php?halaman=tambah_ruang" class="btn btn-success">Tambah Data Pemakaian Ruangan</a>			
-		</div>
-	</div>
-
+	
 
 </div>
+<hr>
  <?php  
 // include_once "../config/class.php";
 
 // $semua_jenjang = $jenjang->tampil_jenjang();
 
 
-$semua_peminjaman = $peminjaman->tampil_peminjaman_admin3();
-$data_guru = $guru->tampil_guru();
-	$data_jenjang = $jenjang->tampil_jenjang();
+$semua_peminjaman = $peminjaman->tampil_peminjaman_pjruangan();
+$data_guru = $guru->tampil_guru_pjruangan();
+	$data_jenjang = $jenjang->tampil_jenjang_pjruangan();
 	$data_ruang = $ruang->tampil_ruang();
 	$data_status = $status->tampil_status();
 	$data_status_final = $status_final->tampil_status_final();
@@ -61,7 +53,7 @@ $data_guru = $guru->tampil_guru();
 <div class="row">
 	<div class="col-md-12">
 	
-		<table class="table table-hover table-striped" id="data-table">
+		<table class="table table-stripped" id="data-table">
 			
 			<thead>
 				<tr>
@@ -76,10 +68,7 @@ $data_guru = $guru->tampil_guru();
 					<th>Status Pengajuan</th>					
 					<th>Status Persetujuan</th>
 					<th>Keterangan</th>
-					<th class="hidden-print">Opsi</th>
-					<!-- <th class="hidden-print">Proposal</th> -->
-				<!--	<th class="hidden-print">Opsi</th> -->
-					<!-- <th>Upload Laporan</th> -->
+					
 					
 				</tr>
 			</thead>
@@ -106,35 +95,10 @@ $data_guru = $guru->tampil_guru();
 			<td> <?php echo ($value['jam']) ?></td>
 			<td><?php echo $value['keperluan']; ?></td> 
 			<td><?php echo $value['nama_status']; ?></td> 
-			<td><a class="btn <?=$class;?>"><?php echo $value['nama_status_final']; ?></a></td> 
+			<td><a class="btn <?=$class?>"><?php echo $value['nama_status_final']; ?></a></td> 
 			<td><?php echo $value['keterangan']; ?></td> 
 			
-			
-			<td class="hidden-print">
-
-				<a href="index.php?halaman=edit_ruang&id_peminjaman=<?php echo $value['id_peminjaman']; ?>" class="" >Ubah Data</a> <br> 
-			<!--	<a href="index.php?halaman=hapus_ruang&id_peminjaman=<?php //echo $value['id_peminjaman']; ?>" class="" onclick="return confirm('hapus data Pemakaian ruang  <?php //echo $value["nama_ruang"]; ?>') " >Hapus Data</a> <br> -->
-
-			<!-- </td>
-
-
-			</td>  -->
-
-			<!--<td class="hidden-print">  -->
-				
-				
-				
-				<!-- <a href="../../laporan/proposal/<?php //echo $value['proposal'] ?>" class="" >Download Proposal</a>	 -->
-				
-						
-			</td>
-
-			
-			<!-- <td>
-				<input type="file" name="upload_file"> <br>
-				<input type="submit" name="upload" value="Upload">
-
-			</td> -->
+		
 			
 		</tr>
 		<?php endforeach ?>
