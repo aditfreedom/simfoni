@@ -6,7 +6,7 @@
 
 	$db_host = "localhost";
 	$db_user = "root";
-	$db_pass = "kebersamaan";
+	$db_pass = "";
 	$db_name = "simfoni";
 	$db_lokasi ="Bireuen";
 
@@ -4003,12 +4003,38 @@ class peminjaman
 
 
 
+	function cek_jadwaltetap($id_hari,$tanggal,$id_ruang,$jam,$jam_selesai)
+	{
+		$semua_data = array();
+		$ambil = $this->koneksi->query("SELECT * FROM jadwal
+		WHERE id_hari = '$id_hari' AND id_ruang='$id_ruang' AND id_jam >='$jam' AND id_jam_selesai='$jam_selesai' ") or die (mysqli_error($this->koneksi));
+		while ($data_array= $ambil->fetch_assoc()) 
+		{
+			$semua_data[] = $data_array;
+		}
+		return $semua_data;
+	}
+
+	function cek_peminjaman($id_hari,$tanggal,$id_ruang,$jam,$jam_selesai)
+	{
+		$semua_data = array();
+		$ambil = $this->koneksi->query("SELECT * FROM peminjaman
+		LEFT JOIN status_final ON peminjaman.id_status_final = status_final.id_status_final
+		WHERE id_hari = '$id_hari' AND id_ruang='$id_ruang' AND jam >='$jam' AND jam_selesai='$jam_selesai' AND waktu_1='$tanggal' AND (peminjaman.id_status_final='2' OR peminjaman.id_status_final='') ") or die (mysqli_error($this->koneksi));
+		while ($data_array= $ambil->fetch_assoc()) 
+		{
+			$semua_data[] = $data_array;
+		}
+		return $semua_data;
+	}
 
 
-		function simpan_peminjaman($id_ruang, $id_status, $id_jenjang, $id_guru, $waktu_1, $jam, $keperluan)
+
+
+		function simpan_peminjaman($id_ruang, $id_status, $id_jenjang, $id_guru, $id_hari, $waktu_1, $jam, $jam_selesai, $keperluan)
 	{ 
-	$this->koneksi->query("INSERT INTO peminjaman (id_ruang, id_status, id_status_final, id_jenjang, id_guru, waktu_1, jam, keperluan, keterangan) 
-		VALUES ('$id_ruang', '$id_status', '', '$id_jenjang', '$id_guru', '$waktu_1', '$jam', '$keperluan',  '')");
+	$this->koneksi->query("INSERT INTO peminjaman (id_ruang, id_status, id_status_final, id_jenjang, id_guru, id_hari, waktu_1, jam, jam_selesai, keperluan, keterangan) 
+		VALUES ('$id_ruang', '$id_status', '', '$id_jenjang', '$id_guru', '$id_hari', '$waktu_1', '$jam', '$jam_selesai', '$keperluan',  '')");
 	}
 
 	
@@ -4042,12 +4068,12 @@ class peminjaman
 		$id_jenjang = $_SESSION['pengguna']['id_guru'];
 		
 		 $ambil = $this->koneksi->query("SELECT * FROM peminjaman
-		 	
 		 	LEFT JOIN guru ON peminjaman.id_guru = guru.id_guru	 
 		 	LEFT JOIN ruang ON peminjaman.id_ruang = ruang.id_ruang	
 		 	LEFT JOIN jenjang ON peminjaman.id_jenjang = jenjang.id_jenjang 
 		 	LEFT JOIN status ON peminjaman.id_status = status.id_status
 		 	LEFT JOIN status_final ON peminjaman.id_status_final = status_final.id_status_final
+			LEFT JOIN hari ON peminjaman.id_hari = hari.id_hari
 			 WHERE peminjaman.id_guru = $id_jenjang
 
 		 	ORDER BY peminjaman.id_status_final, peminjaman.waktu_1 ASC
@@ -4066,7 +4092,7 @@ class peminjaman
 		//$id_jenjang = $_SESSION['pengguna']['id_jenjang'];
 		
 		 $ambil = $this->koneksi->query("SELECT * FROM peminjaman
-		 	
+		 	LEFT JOIN hari ON peminjaman.id_hari = hari.id_hari	 
 		 	LEFT JOIN guru ON peminjaman.id_guru = guru.id_guru	 
 		 	LEFT JOIN ruang ON peminjaman.id_ruang = ruang.id_ruang	
 		 	LEFT JOIN jenjang ON peminjaman.id_jenjang = jenjang.id_jenjang 
@@ -4088,6 +4114,7 @@ class peminjaman
 	function ambil_peminjaman($id_peminjaman)
 	{
 		$ambil = $this->koneksi->query("SELECT * FROM peminjaman 
+		LEFT JOIN hari ON peminjaman.id_hari = hari.id_hari
 			WHERE id_peminjaman='$id_peminjaman'");
 		$data_array = $ambil->fetch_assoc();
 		return $data_array;
@@ -4096,18 +4123,18 @@ class peminjaman
 	
 
 
-	function ubah_peminjaman($id_ruang, $id_status, $id_jenjang, $id_guru, $waktu_1, $jam, $keperluan, $id_peminjaman)	
+	function ubah_peminjaman($id_ruang, $id_status, $id_jenjang, $id_guru, $id_hari, $waktu_1, $jam, $jam_selesai, $keperluan, $id_peminjaman)	
 	{
 		$id_guru = $_SESSION['pengguna']['id_guru'];
-		$this->koneksi->query("UPDATE peminjaman SET id_ruang= '$id_ruang', id_status='$id_status', id_jenjang='$id_jenjang', id_guru= '$id_guru', waktu_1=  '$waktu_1', jam='$jam', keperluan= '$keperluan' WHERE id_peminjaman='$id_peminjaman' AND id_guru = '$id_guru' ");
+		$this->koneksi->query("UPDATE peminjaman SET id_ruang= '$id_ruang', id_status='$id_status', id_jenjang='$id_jenjang', id_guru= '$id_guru', id_hari= '$id_hari', waktu_1=  '$waktu_1', jam='$jam', jam_selesai='$jam_selesai', keperluan= '$keperluan' WHERE id_peminjaman='$id_peminjaman' AND id_guru = '$id_guru' ");
 	}
 
-	function ubah_peminjaman_pjruangan($id_guru, $id_jenjang, $id_ruang, $waktu_1, $jam, $keperluan, $id_status, $id_status_final, $keterangan, 
+	function ubah_peminjaman_pjruangan($id_guru, $id_jenjang, $id_ruang, $id_hari, $waktu_1, $jam, $jam_selesai, $keperluan, $id_status, $id_status_final, $keterangan, 
 
 	  $id_peminjaman)
 	{
 		//$id_guru = $_SESSION['pengguna']['id_guru'];
-		$this->koneksi->query("UPDATE peminjaman SET id_ruang='$id_ruang',  id_status='$id_status', id_status_final = '$id_status_final', id_jenjang='$id_jenjang', id_guru='$id_guru',  waktu_1='$waktu_1', jam='$jam', keperluan='$keperluan',  keterangan= '$keterangan' WHERE id_peminjaman='$id_peminjaman'  ");
+		$this->koneksi->query("UPDATE peminjaman SET id_ruang='$id_ruang',  id_status='$id_status', id_status_final = '$id_status_final', id_jenjang='$id_jenjang', id_guru='$id_guru', id_hari='$id_hari', waktu_1='$waktu_1', jam='$jam', jam_selesai='$jam_selesai', keperluan='$keperluan',  keterangan= '$keterangan' WHERE id_peminjaman='$id_peminjaman'  ");
 	}
 
 	function hapus_peminjaman($id_peminjaman, $id_guru)
@@ -4818,10 +4845,10 @@ class jadwal
 		$this->koneksi->query("DELETE FROM jadwal WHERE id_jadwal ='$id_jadwal' ");
 	}
 
-	function simpan_jadwal($id_jenjang, $id_hari, $id_jam, $id_ruang, $keperluan)
+	function simpan_jadwal($id_jenjang, $id_hari, $id_jam, $id_jam_selesai, $id_ruang, $keperluan)
 	{
 				
-		$this->koneksi->query("INSERT INTO jadwal (id_jenjang, id_hari, id_jam, id_ruang, keperluan) VALUES ('$id_jenjang', '$id_hari', '$id_jam', '$id_ruang', '$keperluan')");
+		$this->koneksi->query("INSERT INTO jadwal (id_jenjang, id_hari, id_jam, id_jam_selesai, id_ruang, keperluan) VALUES ('$id_jenjang', '$id_hari', '$id_jam', '$id_jam_selesai', '$id_ruang', '$keperluan')");
 	}
 	
 	
@@ -5050,9 +5077,6 @@ $pustaka = new pustaka($database);
 			WHERE id_semester='$id_semester'  ");
 		$data_array = $ambil->fetch_assoc();
 		return $data_array;
-
-
-		
 	}
 
 
@@ -5081,6 +5105,8 @@ $pustaka = new pustaka($database);
 		}
 		return $semua_data;
 	}
+
+	
 	
 	
 	function simpan_datapustaka( $id_semester, $id_jenjang, $kegiatan, $waktu_1, $waktu_2, $tujuan,  $sasaran, $biaya)

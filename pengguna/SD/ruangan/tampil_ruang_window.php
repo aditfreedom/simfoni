@@ -63,7 +63,8 @@ $data_guru = $guru->tampil_guru_pjruangan();
 					<th>Level</th>	
 					<th>Nama Ruang</th>	
 					<th>Tanggal Pemakaian</th>
-					<th>Jam Pemakaian</th>
+					<th>Jam Mulai</th>
+					<th>Jam Selesai</th>
 					<th>Keperluan</th>
 					<th>Status Pengajuan</th>					
 					<th>Status Persetujuan</th>
@@ -93,6 +94,7 @@ $data_guru = $guru->tampil_guru_pjruangan();
 			<td><?php echo $value['nama_ruang']; ?></td> 
 			<td><?php echo tanggal_indo($value['waktu_1']) ?> </td>
 			<td> <?php echo ($value['jam']) ?></td>
+			<td> <?php echo ($value['jam_selesai']) ?></td>
 			<td><?php echo $value['keperluan']; ?></td> 
 			<td><?php echo $value['nama_status']; ?></td> 
 			<td><a class="btn <?=$class?>"><?php echo $value['nama_status_final']; ?></a></td> 

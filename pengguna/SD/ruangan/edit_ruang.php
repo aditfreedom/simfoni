@@ -13,6 +13,8 @@ $data_guru = $guru->tampil_guru();
 $data_jenjang = $jenjang->tampil_jenjang();
 $data_ruang = $ruang->tampil_ruang();
 $data_status = $status->tampil_status();
+$data_hari = $hari->tampil_hari();
+
 	
 
 
@@ -76,18 +78,34 @@ $data_status = $status->tampil_status();
 				</select>
 			</div>
 
+			<div class="form-group">
+				<label>Hari Pemakaian</label>
+				<select class="form-control" name="id_hari" >
+					<!-- <option value="">Pilih Level</option> -->
+				<?php foreach ($data_hari as $key => $value): ?>
+					<option  value="<?php echo $value['id_hari'] ?>" > <?php echo $value['hari'] ?> </option>					
+				<?php endforeach ?>					
+				</select>
+			</div>
+
+
 
 
 			<div class="form-group">
 					<label>Tanggal Pemakaian</label>
-					<input type="date" name="waktu_1" class="" value="<?php echo $detail_peminjaman['waktu_1']; ?>" >					
+					<input type="date" name="waktu_1" class="form-control" value="<?php echo $detail_peminjaman['waktu_1']; ?>" >					
 			</div>
-
 
 			<div class="form-group">
-				<label>Jam Pemakaian</label>
-				<input type="text" name="jam" class="form-control" value="<?php echo $detail_peminjaman['jam']; ?>" >
+				<label>Jam Mulai</label>
+				<input type="time" name="jam" class="form-control" required="" placeholder="isikan jam awal dan akhir, contoh 07.30-08.40"  value="<?php echo $detail_peminjaman['jam']; ?>">
 			</div>
+
+			<div class="form-group">
+				<label>Jam Selesai</label>
+				<input type="time" name="jam_selesai" class="form-control" required="" placeholder="isikan jam awal dan akhir, contoh 07.30-08.40"  value="<?php echo $detail_peminjaman['jam_selesai']; ?>">
+			</div>
+
 
 
 		
@@ -123,7 +141,7 @@ $data_status = $status->tampil_status();
 		<?php 
 			if (isset($_POST['ubah']))
 			{
-				$peminjaman->ubah_peminjaman($_POST['id_ruang'], $_POST['id_status'], $_POST['id_jenjang'], $_POST['id_guru'], $_POST['waktu_1'], $_POST['jam'], $_POST['keperluan'], $_GET['id_peminjaman']);
+				$peminjaman->ubah_peminjaman($_POST['id_ruang'], $_POST['id_status'], $_POST['id_jenjang'], $_POST['id_guru'], $_POST['id_hari'], $_POST['waktu_1'], $_POST['jam'], $_POST['jam_selesai'], $_POST['keperluan'], $_GET['id_peminjaman']);
 
 				echo "<script>alert('data tersimpan')</script>";
 				echo "<script>location='index.php?halaman=tampil_ruang'</script>";

@@ -27,6 +27,7 @@ $data_guru = $guru->tampil_guru();
 	$data_ruang = $ruang->tampil_ruang();
 	$data_status = $status->tampil_status();
 	$data_status_final = $status_final->tampil_status_final();
+	
 
  
 // $semua_mapel2 = $mapel2->tampil_mapel2();
@@ -70,8 +71,10 @@ $data_guru = $guru->tampil_guru();
 					<th>Nama Pengguna</th>
 					<th>Level</th>	
 					<th>Nama Ruang</th>	
+					<th>Hari Pemakaian</th>
 					<th>Tanggal Pemakaian</th>
-					<th>Jam Pemakaian</th>
+					<th>Jam Mulai</th>
+					<th>Jam Selesai</th>
 					<th>Keperluan</th>
 					<th>Status Pengajuan</th>					
 					<th>Status Persetujuan</th>
@@ -102,8 +105,10 @@ $data_guru = $guru->tampil_guru();
 			<td><?php echo $value['nama_guru'] ;?>  </td>
 			<td><?php echo $value['nama_jenjang']; ?></td> 
 			<td><?php echo $value['nama_ruang']; ?></td> 
+			<td><?php echo $value['hari']; ?></td> 
 			<td><?php echo tanggal_indo($value['waktu_1']) ?> </td>
 			<td> <?php echo ($value['jam']) ?></td>
+			<td> <?php echo ($value['jam_selesai']) ?></td>
 			<td><?php echo $value['keperluan']; ?></td> 
 			<td><?php echo $value['nama_status']; ?></td> 
 			<td><a class="btn <?=$class;?>"><?php echo $value['nama_status_final']; ?></a></td> 

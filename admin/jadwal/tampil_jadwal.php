@@ -72,7 +72,8 @@ $data_hari = $hari->tampil_hari();
 					<th>Level</th>	
 					<th>Hari</th>	
 					<th>Nama Ruang</th>
-					<th>Jam Pemakaian</th>
+					<th>Jam Mulai</th>
+					<th>Jam Selesai</th>
 					<th>Keperluan</th>
 					
 					<th class="hidden-print">Opsi</th>
@@ -92,6 +93,7 @@ $data_hari = $hari->tampil_hari();
 			<td><?php echo $value['hari']; ?></td> 
 			<td><?php echo ($value['nama_ruang']) ?></td>
 			<td><?php echo $value['id_jam']; ?></td> 
+			<td><?php echo $value['id_jam_selesai']; ?></td> 
 			<td><?php echo $value['keperluan']; ?></td> 
 			
 			

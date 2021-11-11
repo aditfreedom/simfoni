@@ -1,12 +1,10 @@
 <div class="row">
 	<div class="col-md-6">
-		<h3>Data Pemakaian Ruangan</h3>
-		<h3>Sekolah Sukma Bangsa <?php echo  ($db_lokasi)?></h3>
+	<h2><b><i class="fa fa-check"></i> DATA PERSETUJUAN RUANGAN</a></li></b></h2>	<br>
 	</div>
-	
+	</div>
+	<hr>
 
-</div>
-<hr>
  <?php  
 // include_once "../config/class.php";
 
@@ -19,6 +17,8 @@ $data_guru = $guru->tampil_guru_pjruangan();
 	$data_ruang = $ruang->tampil_ruang();
 	$data_status = $status->tampil_status();
 	$data_status_final = $status_final->tampil_status_final();
+	$data_hari = $hari->tampil_hari();
+
 
  
 // $semua_mapel2 = $mapel2->tampil_mapel2();
@@ -53,7 +53,7 @@ $data_guru = $guru->tampil_guru_pjruangan();
 <div class="row">
 	<div class="col-md-12">
 	
-		<table class="table table-stripped" id="data-table">
+		<table class="table table-hover table-striped" id="data-table">
 			
 			<thead>
 				<tr>
@@ -62,8 +62,10 @@ $data_guru = $guru->tampil_guru_pjruangan();
 					<th>Nama Pengguna</th>
 					<th>Level</th>	
 					<th>Nama Ruang</th>	
+					<th>Hari Pemakaian</th>
 					<th>Tanggal Pemakaian</th>
-					<th>Jam Pemakaian</th>
+					<th>Jam Mulai</th>
+					<th>Jam Selesai</th>
 					<th>Keperluan</th>
 					<th>Status Pengajuan</th>					
 					<th>Status Persetujuan</th>
@@ -88,13 +90,16 @@ $data_guru = $guru->tampil_guru_pjruangan();
 				$class="";
 			}
 			?>
+			
 		<tr>
 			<td><?php echo $key+1; ?></td>
 			<td><?php echo $value['nama_guru'] ;?>  </td>
 			<td><?php echo $value['nama_jenjang']; ?></td> 
 			<td><?php echo $value['nama_ruang']; ?></td> 
+			<td><?php echo $value['hari']; ?></td> 
 			<td><?php echo tanggal_indo($value['waktu_1']) ?> </td>
 			<td> <?php echo ($value['jam']) ?></td>
+			<td> <?php echo ($value['jam_selesai']) ?></td>
 			<td><?php echo $value['keperluan']; ?></td> 
 			<td><?php echo $value['nama_status']; ?></td> 
 			<td><a class="btn <?=$class?>"><?php echo $value['nama_status_final']; ?></a></td> 
@@ -103,8 +108,8 @@ $data_guru = $guru->tampil_guru_pjruangan();
 			
 			<td class="hidden-print">
 
-				<a href="index.php?halaman=edit_ruang&id_peminjaman=<?php echo $value['id_peminjaman']; ?>" class="btn btn-warning">Ubah Data</a> <br> <br>
-				<a href="index.php?halaman=hapus_ruang&id_peminjaman=<?php echo $value['id_peminjaman']; ?>" class="btn btn-danger" onclick="return confirm('hapus pengajuan pemakaian dari <?php echo $value["nama_guru"]; ?>') " >Hapus Data</a> <br>
+				<a href="index.php?halaman=edit_ruang&id_peminjaman=<?php echo $value['id_peminjaman']; ?>" class="" ><div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div></a> <br> <br> 
+				<a href="index.php?halaman=hapus_ruang&id_peminjaman=<?php echo $value['id_peminjaman']; ?>" class="" onclick="return confirm('hapus pengajuan pemakaian dari <?php echo $value["nama_guru"]; ?>') " ><div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div></a> <br>
 				
 				
 						

@@ -78,8 +78,13 @@
 			</div>
 
 			<div class="form-group">
-				<label>Jam Pemakaian</label>
-				<input type="text" name="id_jam" class="form-control" required="" placeholder="isikan jam awal dan akhir, contoh 07.30-08.40 per sesi">
+				<label>Jam Mulai</label>
+				<input type="time" name="id_jam" class="form-control" required="" placeholder="isikan jam awal dan akhir, contoh 07.30-08.40 per sesi">
+			</div>
+
+			<div class="form-group">
+				<label>Jam Selesai</label>
+				<input type="time" name="id_jam_selesai" class="form-control" required="" placeholder="isikan jam awal dan akhir, contoh 07.30-08.40 per sesi">
 			</div>
 
 
@@ -100,7 +105,7 @@
 		<?php 
 			if (isset($_POST['simpan']))
 			{
-				$jadwal->simpan_jadwal($_POST['id_jenjang'], $_POST['id_hari'], $_POST['id_jam'], $_POST['id_ruang'], $_POST['keperluan'] );
+				$jadwal->simpan_jadwal($_POST['id_jenjang'], $_POST['id_hari'], $_POST['id_jam'],  $_POST['id_jam_selesai'], $_POST['id_ruang'], $_POST['keperluan'] );
 
 				echo "<script>alert('data tersimpan')</script>";
 				echo "<script>location='index.php?halaman=tampil_jadwal'</script>";

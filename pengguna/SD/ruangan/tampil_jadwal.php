@@ -38,11 +38,12 @@ $semua_jadwal = $jadwal->tampil_jadwal();
 			
 			<thead>
 				<tr>
-					<th>No</th>
+				<th>No</th>
 					<th>Level</th>	
 					<th>Hari</th>	
 					<th>Nama Ruang</th>
-					<th>Jam Pemakaian</th>
+					<th>Jam Mulai</th>
+					<th>Jam Selesai</th>
 					<th>Keperluan</th>
 					
 					
@@ -54,11 +55,12 @@ $semua_jadwal = $jadwal->tampil_jadwal();
 				<?php foreach ($semua_jadwal as $key => $value): ?>
 			
 		<tr>
-			<td><?php echo $key+1; ?></td>
+		<td><?php echo $key+1; ?></td>
 			<td><?php echo $value['nama_jenjang']; ?></td> 
 			<td><?php echo $value['hari']; ?></td> 
 			<td><?php echo ($value['nama_ruang']) ?></td>
 			<td><?php echo $value['id_jam']; ?></td> 
+			<td><?php echo $value['id_jam_selesai']; ?></td> 
 			<td><?php echo $value['keperluan']; ?></td> 
 		
 			

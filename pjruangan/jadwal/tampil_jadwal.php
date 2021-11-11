@@ -54,6 +54,7 @@ $data_hari = $hari->tampil_hari();
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Data Guest Teacher SMA</title>
 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
 </head>
 <body>
@@ -63,7 +64,7 @@ $data_hari = $hari->tampil_hari();
 <div class="row">
 	<div class="col-md-12">
 	
-		<table class="table table-stripped" id="data-table" style="width:100%;">
+		<table class="table table-stripped" id="data-table">
 			
 			<thead>
 				<tr>
@@ -71,7 +72,8 @@ $data_hari = $hari->tampil_hari();
 					<th>Level</th>	
 					<th>Hari</th>	
 					<th>Nama Ruang</th>
-					<th>Jam Pemakaian</th>
+					<th>Jam Mulai</th>
+					<th>Jam Selesai</th>
 					<th>Keperluan</th>
 					
 					<th class="hidden-print">Opsi</th>
@@ -91,13 +93,14 @@ $data_hari = $hari->tampil_hari();
 			<td><?php echo $value['hari']; ?></td> 
 			<td><?php echo ($value['nama_ruang']) ?></td>
 			<td><?php echo $value['id_jam']; ?></td> 
+			<td><?php echo $value['id_jam_selesai']; ?></td> 
 			<td><?php echo $value['keperluan']; ?></td> 
 			
 			
 			<td class="hidden-print">
 
-				<a href="index.php?halaman=edit_jadwal&id_jadwal=<?php echo $value['id_jadwal']; ?>" class="btn btn-success" >Ubah Data</a> <br> <br>
-				<a href="index.php?halaman=hapus_jadwal&id_jadwal=<?php echo $value['id_jadwal']; ?>" class="btn btn-danger" onclick="return confirm('hapus jadwal penggunaan  <?php echo $value["nama_ruang"]; ?>') " >Hapus Data</a> <br>
+				<a href="index.php?halaman=edit_jadwal&id_jadwal=<?php echo $value['id_jadwal']; ?>" class="btn btn-success" >Ubah Data</a> <br> 
+				<br><a href="index.php?halaman=hapus_jadwal&id_jadwal=<?php echo $value['id_jadwal']; ?>" class="btn btn-danger" onclick="return confirm('hapus jadwal penggunaan  <?php echo $value["nama_ruang"]; ?>') " >Hapus Data</a> <br>
 				
 				
 						
